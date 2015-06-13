@@ -1,5 +1,5 @@
 <?php
-//Dit is de template codebitpagina
+//This is the template codebitpage
 //Codebits
 
 
