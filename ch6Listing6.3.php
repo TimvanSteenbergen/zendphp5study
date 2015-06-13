@@ -17,7 +17,7 @@ $values = array(
 fputcsv($f, $values);
 fclose($f);
 
-echo 'If all went well, a file has now been created named file.csv, containing the arrayvalues.\r\n';
+echo 'If all went well, a file has now been created named file.csv, containing the arrayvalues.<br/>';
 echo 'Look for the file and check the contents.<br/>';
 echo 'Try refreshing and see what happens<br/>';
 
