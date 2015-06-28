@@ -1,0 +1,19 @@
+body {
+    margin-left: 300px;
+}
+
+a {
+    display: block
+}
+
+#index {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+}
+
+h1 {
+    color: green;
+    font-size: 12px;
+}
