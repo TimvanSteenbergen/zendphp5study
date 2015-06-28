@@ -6,9 +6,16 @@
  * Date: 6-6-2015
  * Time: 12:32
  */
+    include_once('indexfooter.html');
+
 echo "<h2>Display an asterisk</h2>";
 echo 'echo "\x2a" Shows: '; echo "\x2a" . PHP_EOL;
 echo 'echo "\052" Shows: '; echo "\052<br/>";
+$code = <<<'CODE'
+echo "\x2a";
+CODE;
+showcode($code);
+eval($code);
 
 echo "<a id='variableinterpolation' href='#'><h2>Variable interpolation</h2></a>";
 $who = "World";
@@ -48,13 +55,6 @@ $who = "World";
 echo <<<'TEXT'
 So I said, "Hello $who"
 TEXT;
-echo '<br/>TTTTTTTTTTTTTTTTTTTT';
-$code = <<<'CODE'
-echo "\x2a";
-CODE;
-echo $code;
-eval($code);
 
 echo "<a id='escaping' href='#'><h2>Escaping literal values</h2></a>";
 
-include_once('indexfooter.html');
