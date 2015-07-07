@@ -20,3 +20,19 @@ echo count($c); // Outputs 1
 CODE
 );
 
+echo 'Array flip';
+showcode (<<<'CODE'
+$a = array('a', 'b', 'c');
+var_dump(array_flip($a));
+CODE
+);
+
+echo 'Array reverse';
+showcode (<<<'CODE'
+$a = array('x' => 'a', 10 => 'b', 'c');
+var_dump(array_reverse($a));
+CODE
+);
+
+
+

@@ -24,8 +24,12 @@ switch (strtoupper(substr(PHP_OS, 0, 3))) {
 //define('PHP_EOL', $linebreak);
 
 function showcode($code){
-    echo '<p class="codesource">' . var_dump($code) .'</p>';
-    echo '<br/>';
+    echo '<div class="codesource">';
+    var_dump($code);
+    echo '<div class="coderesult">';
     echo 'Shows:<br/>';
-    echo '<p class="coderesult">' . eval($code) .'</p>';
+    eval($code);
+    echo '</div>';
+    echo '</div>';
+    echo '<br/>';
 }

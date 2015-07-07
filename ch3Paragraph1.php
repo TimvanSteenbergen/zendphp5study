@@ -9,12 +9,14 @@
     include_once('indexfooter.html');
 
 echo "<h2>Display an asterisk</h2>";
-echo 'echo "\x2a" Shows: '; echo "\x2a" . PHP_EOL;
-echo 'echo "\052" Shows: '; echo "\052<br/>";
-$code = <<<'CODE'
+showcode(<<<'CODE'
 echo "\x2a";
-CODE;
-showcode($code);
+CODE
+);
+showcode(<<<'CODE'
+echo "\052";
+CODE
+);
 
 echo "<a id='variableinterpolation' href='#'><h2>Variable interpolation</h2></a>";
 $who = "World";
