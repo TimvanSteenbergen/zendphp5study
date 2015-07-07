@@ -15,7 +15,6 @@ $code = <<<'CODE'
 echo "\x2a";
 CODE;
 showcode($code);
-eval($code);
 
 echo "<a id='variableinterpolation' href='#'><h2>Variable interpolation</h2></a>";
 $who = "World";
