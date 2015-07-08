@@ -6,15 +6,17 @@
  * Date: 6-6-2015
  * Time: 12:32
  */
-$a = ['a'=>1,2,3];echo '$a = [1,2,3];';
-var_dump($a);
 
+include_once('indexfooter.html');
+
+showcode (<<<'CODE'
+$a = ['a'=>1,2,3];
+var_dump($a);
 $b = ['a'=>1, 'b', 'c'];
-$out = <<<'EOD'
-$b = ['a'=>1, 'b', 'c'];
-EOD;
-echo $out;
 var_dump($b);
+CODE
+);
+
 
 //array definitions
 echo '//array definitions';
@@ -50,5 +52,3 @@ var_dump($union);
 $d = ['a'=>NULL,'b'=>2];
 unset($d['b']);
 var_dump($d);
-
-include_once('indexfooter.html');

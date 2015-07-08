@@ -5,18 +5,18 @@
  * Date: 6-6-2015
  * Time: 12:32
  */
-$a = array('zero', 'one', 'two');
-echo <<<'A'
-$a = array('zero', 'one', 'two')
-A;
+include_once('indexfooter.html');
 
+showcode (<<<'CODE'
+$a = array('zero', 'one', 'two');
 echo '<br/>Running foreach by reference<br/>';
 foreach ($a as &$v) {
-    echo $v . "\n";
+    echo $v . "<br/>";
 }
 echo '<br/>Running foreach by value<br/>';
 foreach ($a as $v) {
-    echo $v . "\n";
+    echo $v . "<br/>";
 }
 print_r($a);
-include_once('indexfooter.html');
+CODE
+);
