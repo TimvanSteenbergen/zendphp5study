@@ -8,4 +8,4 @@
 
 
 //Einde van de Codebits
-include_once('indexfooter.html');
+include_once('indexfooter.php');

@@ -51,4 +51,4 @@ $d = ['a'=>NULL,'b'=>2];
 unset($d['b']);
 var_dump($d);
 
-include_once('indexfooter.html');
+include_once('indexfooter.php');

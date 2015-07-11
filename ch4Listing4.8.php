@@ -19,4 +19,4 @@ foreach ($a as $v) {
     echo $v . "\n";
 }
 print_r($a);
-include_once('indexfooter.html');
+include_once('indexfooter.php');

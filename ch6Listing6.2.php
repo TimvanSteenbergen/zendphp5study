@@ -15,4 +15,4 @@ while (!feof($file)) {
 echo "Listing 6.2 says: There have been $txt hits to Listing 6.1 of this site.";
 
 //Einde van de Codebits
-include_once('indexfooter.html');
+include_once('indexfooter.php');

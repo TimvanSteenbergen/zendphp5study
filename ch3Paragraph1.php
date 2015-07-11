@@ -6,7 +6,7 @@
  * Date: 6-6-2015
  * Time: 12:32
  */
-    include_once('indexfooter.html');
+    include_once('indexfooter.php');
 
 echo "<h2>Display an asterisk</h2>";
 showcode(<<<'CODE'

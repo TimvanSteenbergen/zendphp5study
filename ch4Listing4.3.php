@@ -7,7 +7,7 @@
  * Time: 12:32
  */
 
-include_once('indexfooter.html');
+include_once('indexfooter.php');
 
 showcode (<<<'CODE'
 $a = array(1, 2, 3);
