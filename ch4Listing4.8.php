@@ -5,6 +5,7 @@
  * Date: 6-6-2015
  * Time: 12:32
  */
+include_once('indexfooter.php');
 $a = array('zero', 'one', 'two');
 echo <<<'A'
 $a = array('zero', 'one', 'two')
@@ -19,4 +20,3 @@ foreach ($a as $v) {
     echo $v . "\n";
 }
 print_r($a);
-include_once('indexfooter.php');
