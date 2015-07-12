@@ -1,7 +1,7 @@
 <?php
 //Chapter 8 - paragraph JSON
 
-include_once('indexfooter.php');
+include_once('index.php');
 echo '<h2>Listing 8.1: JSON options</h2>';
 showcode(<<<'CODE'
 $array = [

@@ -17,4 +17,4 @@ if ($f) {
 }
 var_dump($page);
 //Einde van de Codebits
-include_once('indexfooter.php');
+include_once('index.php');

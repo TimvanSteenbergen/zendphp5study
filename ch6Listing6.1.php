@@ -18,4 +18,4 @@ fwrite($file, $counter);
 echo "Listing 6.1 says: There has been $counter hits to this site.";
 
 //Einde van de Codebits
-include_once('indexfooter.php');
+include_once('index.php');

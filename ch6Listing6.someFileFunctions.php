@@ -18,4 +18,4 @@ if(is_writable('counter.txt')){
 
 
 //Einde van de Codebits
-include_once('indexfooter.php');
+include_once('index.php');

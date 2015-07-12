@@ -7,7 +7,7 @@
  * Time: 12:32
  */
 
-include_once('indexfooter.php');
+include_once('index.php');
 
 echo 'Listing 4.4: Counting array elements';
 showcode (<<<'CODE'

@@ -5,7 +5,7 @@
  * Date: 6-6-2015
  * Time: 12:32
  */
-include_once('indexfooter.php');
+include_once('index.php');
 $a = array('zero', 'one', 'two');
 echo <<<'A'
 $a = array('zero', 'one', 'two')

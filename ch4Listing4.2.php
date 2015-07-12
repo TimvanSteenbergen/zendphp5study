@@ -6,7 +6,7 @@
  * Date: 6-6-2015
  * Time: 12:32
  */
-include_once('indexfooter.php');
+include_once('index.php');
 $a = ['a'=>1,2,3];echo '$a = [1,2,3];';
 var_dump($a);
 

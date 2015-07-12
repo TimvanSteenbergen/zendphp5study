@@ -22,4 +22,4 @@ echo 'Look for the file and check the contents.<br/>';
 echo 'Try refreshing and see what happens<br/>';
 
 //Einde van de Codebits
-include_once('indexfooter.php');
+include_once('index.php');

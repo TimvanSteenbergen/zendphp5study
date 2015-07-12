@@ -7,7 +7,7 @@
  * Time: 12:32
  */
 
-include_once('indexfooter.php');
+include_once('index.php');
 
 echo '<h2>The Array Pointer</h2>';
 echo 'Listing 4.5: Using the array pointer';
