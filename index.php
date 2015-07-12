@@ -24,6 +24,17 @@
 //define('PHP_EOL', $linebreak);
 
 function showcode($code){
+    $stringarray = explode("\n",$code);
+    $numoflines = count($stringarray);
+    $numofcolumns = 100;
+    echo '<textarea rows="'.$numoflines .'" cols="' . $numofcolumns . '">'.$code.'</textarea>';
+    echo '<div style="display:inline-block;">Evaluates to:</br><input type="button" value="Run again"" onclick="RunAgain(this)"/></div>';
+    echo '<textarea rows="'.$numoflines .'" cols="' . $numofcolumns . '">';
+    eval($code);
+    echo '</textarea>';
+
+//    echo '<textarea>"'.$code.'"</textarea><button onclick="eval('.$code.')" /><textarea>'.eval($code).'</textarea>';
+
     echo '<div class="codesource">';
         var_dump($code);
         echo '<div class="coderesult">';

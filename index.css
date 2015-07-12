@@ -1,3 +1,4 @@
+
 body {
     margin-left: 300px;
 }
@@ -16,4 +17,11 @@ a {
 h1 {
     color: green;
     font-size: 12px;
+}
+.codesource{
+    border: 3px solid #aaaaff;
+    background-color: #ddddff;
+}
+.coderesult{
+    background-color: #ffdddd;
 }
