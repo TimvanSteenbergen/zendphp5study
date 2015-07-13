@@ -1,4 +1,4 @@
-function RunAgain(i){
+function EvaluateAgain(i){
 
     var code = $('textarea#source'+i)[0].value;
     uf_urltemp = "http://localhost:8000/functions.php"; //1&XDEBUG_SESSION_START=PHPSTORM";

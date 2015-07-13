@@ -8,7 +8,7 @@
  */
 include_once('index.php');
 
-echo "<h2>Display an asterisk</h2>";
+echo "<h2 id='numbertypes'>Display an asterisk</h2>";
 showcode(<<<'CODE'
 echo "\x2a";
 CODE
@@ -21,7 +21,7 @@ showcode(<<<'CODE'
 CODE
 );
 
-echo "<a id='variableinterpolation' href='#'><h2>Variable interpolation</h2></a>";
+echo "<h2 id='variableinterpolation'>Variable interpolation</h2>";
 showcode(<<<'CODE'
 $who = "World";
 echo "Hello $who\n";
@@ -39,7 +39,7 @@ showcode(<<<'CODE'
 CODE
 );
 
-echo "<a id='heredoc' href='#'><h2>The Heredoc and Nowdoc Syntax</h2></a>";
+echo "<h2 id='heredoc'>The Heredoc and Nowdoc Syntax</h2>";
 showcode(<<<'CODE'
 $who = "World";
 echo <<<TEXT
@@ -68,9 +68,29 @@ CODE
 );
 
 
-echo "<a id='escaping' href='#'><h2>Escaping literal values</h2></a>";
-echo '$who = "World";<br/>';
+echo "<h2 id='escaping'>Escaping literal values</h2>";
 showcode(<<<'CODE'
+echo 'This is \'my\' string';
 CODE
 );
 
+showcode(<<<'CODE'
+$a = 10;
+echo "The value of \$a is \"$a\".";
+CODE
+);
+
+showcode(<<<'CODE'
+echo "Here's an escaped backslash: - \\ -";
+CODE
+);
+
+showcode(<<<'CODE'
+echo "Here's a literal brace + dollar sign: {\$";
+CODE
+);
+
+showcode(<<<'CODE'
+echo "Here's a literal brace + dollar sign: {\$";
+CODE
+);
