@@ -30,7 +30,7 @@ if (isset ( $_GET ["codeJSON"] )){
     ob_end_clean();
     echo $generated_html;
 }else{
-    echo "codesample niet in de post.";
+//    echo "codesample niet in de post.";
 }
 
 function showcode($code){
