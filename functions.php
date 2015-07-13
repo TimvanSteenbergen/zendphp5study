@@ -41,12 +41,15 @@ function showcode($code){
     $numoflines = count($stringarray);
     $numofcolumns = 80;
     $id = microtime(true)*rand();
+    $bgcolor = dechex(rand(190,256)*256*256 + rand(190,256)*256 + rand(190,256));
 
+    echo '<div style="background-color: #' . $bgcolor . '; padding:5px;">';
 //    echo '<label for="source'.$id.'" rows="'.$numoflines .'">Sourcecode:</label>';
     echo '<textarea id="source'.$id.'" rows="'.$numoflines .'" cols="' . $numofcolumns . '">'.$code.'</textarea>';
-    echo '<div style="display:inline-block;">Evaluates to:</br><input type="button" value="Evaluate again" onclick="EvaulateAgain(\''.$id.'\')" /></div>';
+    echo '<div style="display:inline-block;">Evaluates to:</br><input type="button" value="Evaluate again" onclick="EvaluateAgain(\''.$id.'\')" /></div>';
     echo '<textarea id="result'.$id.'" rows="'.$numoflines .'" cols="' . $numofcolumns . '">';
     eval($code);
     echo '</textarea>';
     echo '<br/>';
+    echo '</div>';
 }
