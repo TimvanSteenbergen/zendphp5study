@@ -1,13 +1,22 @@
+$(function() {
+    $('h1').onclick(function () {
+        $(this).nextNode().toggle();
+    })
+});
+//function onload() {
+//    $('h1').onclick(function () {
+//        $(this).nextNode().toggle();
+//    })
+//});
 function EvaluateAgain(i){
 
     var code = $('textarea#source'+i)[0].value;
     uf_urltemp = "http://localhost:8000/functions.php"; //1&XDEBUG_SESSION_START=PHPSTORM";
-    jQuery.ajax({
+    $.ajax({
         type: "GET",
         url: uf_urltemp,
         data: {codeJSON:code},
         datatype: JSON,
-        async: false,
         success: function (response) {
             $('textarea#result' + i)[0].innerHTML = response;
         },
