@@ -1,13 +1,9 @@
-$(function() {
-    $('h1').onclick(function () {
-        $(this).nextNode().toggle();
+$(document).ready (function() {
+    $('h1').click (function(){
+        $(this.nextElementSibling).toggle();
     })
 });
-//function onload() {
-//    $('h1').onclick(function () {
-//        $(this).nextNode().toggle();
-//    })
-//});
+
 function EvaluateAgain(i){
 
     var code = $('textarea#source'+i)[0].value;
