@@ -9,6 +9,19 @@
 
 include_once('index.php');
 
+echo '<h2>Array operations</h2>';
+echo 'Listing 4.3: Comparing arrays';
+showcode (<<<'CODE'
+$a = array(1, 2, 3);
+$b = array(1 => 2, 2 => 3, 0 => 1);
+$c = array('a' => 1, 'b' => 2, 'c' => 3);
+var_dump($a == $b); // True
+var_dump($a === $b); // False
+var_dump($a == $c); // False
+var_dump($a === $c); // False
+CODE
+);
+
 echo 'Listing 4.4: Counting array elements';
 showcode (<<<'CODE'
 $a = array(1, 2, 4);
@@ -33,6 +46,3 @@ $a = array('x' => 'a', 10 => 'b', 'c');
 var_dump(array_reverse($a));
 CODE
 );
-
-
-

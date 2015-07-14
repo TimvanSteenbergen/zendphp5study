@@ -61,6 +61,8 @@ public $greeting = <<<EOT
 Hello World
 EOT;
 }
+$hi = new Hello;
+echo $hi->greeting;
 CODE
 );
 showcode(<<<'CODE'
