@@ -2,6 +2,20 @@
 include_once('index.php');
 
 echo '<h2>Chapter 8 - paragraph JSON</h2>';
+
+showcode(<<<'CODE'
+$array = ["foo", "bar", "baz"];
+$string =  json_encode($array);
+echo $string;
+var_dump($string);
+CODE
+);
+showcode(<<<'CODE'
+$array = ["one" => "foo", "two" => "bar", "three" => "baz"];
+echo json_encode($array);
+CODE
+);
+
 echo '<h2>Listing 8.1: JSON options</h2>';
 
 showcode(<<<'CODE'
