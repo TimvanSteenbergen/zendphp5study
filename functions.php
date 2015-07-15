@@ -32,13 +32,15 @@ if (isset ( $_GET ["codeJSON"] )){
     ob_end_clean();
     echo $generated_html;
     return;
-}else{
-//    echo "codesample niet in de post.";
 }
 
-function showcode($code){
+function showcode($code, $lines = null){
     $stringarray = explode("\n",$code);
-    $numoflines = min(20,max(3,count($stringarray)));
+    if($lines!==NULL){
+        $numoflines = $lines;
+    }else {
+        $numoflines = min(20, max(3, count($stringarray)));
+    }
     $numofcolumnssource = 60;
     $numofcolumnsresult = 80;
     $id = microtime(true)*rand();

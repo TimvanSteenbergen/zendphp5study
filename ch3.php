@@ -40,6 +40,7 @@ CODE
 );
 
 echo "<h2 id='heredoc'>The Heredoc and Nowdoc Syntax</h2>";
+echo "Not really useful since HEREDOC and NOWDOC does not work with eval() (yet)";
 showcode(<<<'CODE'
 $who = "World";
 echo <<<TEXT
@@ -48,6 +49,7 @@ TEXT;
 CODE
 );
 
+echo "Not really useful since HEREDOC and NOWDOC does not work with eval() (yet)";
 showcode(<<<'CODE'
 $who = "World";
 echo <<<'TEXT'

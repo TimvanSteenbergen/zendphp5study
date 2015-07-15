@@ -32,6 +32,9 @@ class User implements JsonSerializable
         ];
     }
 }
+$me = new User();
+$me->first_name = 'Davey';
+echo json_encode($me);
 $davey = [
     'first_name' => 'Davey',
     'last_name' => 'Shafik',
