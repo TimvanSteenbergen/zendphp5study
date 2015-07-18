@@ -9,7 +9,7 @@
 
 include_once('index.php');
 
-echo '<h2>Sorting Arrays</h2>';
+echo '<h2>Chapter 4 Sorting Arrays</h2>';
 echo 'sort()';
 showcode (<<<'CODE'
 $array = array('a' => 'foo', 'b' => 'bar', 'c' => 'baz');

@@ -8,6 +8,7 @@
  */
 include_once('index.php');
 
+echo "<h2 id='numbertypes'>Chapter 3k</h2>";
 echo "<h2 id='numbertypes'>Display an asterisk</h2>";
 showcode(<<<'CODE'
 echo "\x2a";

@@ -9,7 +9,7 @@
 
 include_once('index.php');
 
-echo '<h2>Array operations</h2>';
+echo '<h2>Chapter 4 Array operations</h2>';
 echo 'Listing 4.3: Comparing arrays';
 showcode (<<<'CODE'
 $a = array(1, 2, 3);

@@ -1,7 +1,7 @@
 <?php
 include_once('index.php');
 
-echo '<h2>Chapter 8 - paragraph JSON</h2>';
+echo '<h2>Chapter 8 - paragraph JSON encoding data</h2>';
 
 showcode(<<<'CODE'
 $array = ["foo", "bar", "baz"];
@@ -74,3 +74,15 @@ $davey = [
 echo json_encode($davey);
 CODE
 );
+echo '<h2>Chapter 8 - paragraph JSON decoding data</h2>';
+echo 'Decode into an object or into an array.';
+showcode(<<<'CODE'
+$json = '{ "name": "Davey Shafik", "age": 30 }';
+$data = json_decode($json);
+print_r($data);
+echo '<br/>';
+$data = json_decode($json, true);
+echo $data;
+CODE
+);
+

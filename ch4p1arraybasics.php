@@ -8,7 +8,7 @@
  */
 include_once('index.php');
 
-echo '<h2>Array Basics</h2>';
+echo '<h2>Chapter 4 Array Basics</h2>';
 showcode(<<<'CODE'
 $a = array(10, 20, 30);print_r($a);
 $a = array(a' => 10, 'b' => 20, 'cee' => 30);print_r($a);

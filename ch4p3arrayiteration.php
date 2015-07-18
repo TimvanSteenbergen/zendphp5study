@@ -9,7 +9,7 @@
 
 include_once('index.php');
 
-echo '<h2>Array iterations</h2>';
+echo '<h2>Chapter 4 Array iterations</h2>';
 echo '<h3>The Array Pointer</h3>';
 echo 'Listing 4.5: Using the array pointer';
 showcode (<<<'CODE'
