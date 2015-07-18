@@ -17,7 +17,7 @@ CODE
 );
 
 echo '<h2>Listing 8.1: JSON options</h2>';
-
+echo 'Try removing any of the parameters, or $options from the call. Or the key from the data which might return a array, if JSON_FORCE_OBJECT is not set:';
 showcode(<<<'CODE'
 $array = [
     "name" => "Davey Shafik",
@@ -26,6 +26,22 @@ $array = [
 $options = JSON_PRETTY_PRINT |
 JSON_NUMERIC_CHECK |
 JSON_FORCE_OBJECT;
+echo json_encode($array, $options);
+CODE
+);
+echo 'Try removing any of the parameters:';
+showcode(<<<'CODE'
+$array = [
+    "tags" => "These are tags <> <b> etc",
+    "ampersand" => "This is a ampersand &",
+    "apostrophe" => "This is a apostrophe ''",
+    "quote" => "This is a quote \"",
+    ];
+$options =
+JSON_HEX_TAG |
+JSON_HEX_AMP |
+JSON_HEX_APOS |
+JSON_HEX_QUOT;
 echo json_encode($array, $options);
 CODE
 );
