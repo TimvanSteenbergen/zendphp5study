@@ -4,9 +4,9 @@ include_once('index.php');
 echo '<h2>Chapter 8 - paragraph JSON encoding data</h2>';
 
 showcode(<<<'CODE'
-$array = ["foo", "bar", "baz"];
+$array = ["foo", "bar", 9=>'bdaz'];
 $string =  json_encode($array);
-echo $string;
+echo $string ."\n";
 var_dump($string);
 CODE
 );

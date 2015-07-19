@@ -1,11 +1,11 @@
 <?php
 include_once('index.php');
 
-echo '<h2>Chapter 8 - paragraph SimpleXML</h2>Parsing XML Documents<br/>NB. the file \'library.xml\' is in the root of this project.<br/>';
+echo '<h2>Chapter 8 - paragraph SimpleXML</h2>Parsing XML Documents<br/>NB. the file \'library.xml\' is in the root\xml of this project.<br/>';
 echo 'Load an XML string, the procedural way';
 showcode(<<<'CODE'
 // Load an XML string
-$xmlstr = file_get_contents('library.xml');
+$xmlstr = file_get_contents('xml\library.xml');
 $library = simplexml_load_string($xmlstr);
 print_r($library);
 CODE
@@ -13,14 +13,14 @@ CODE
 echo 'Load an XML file, the procedural way';
 showcode(<<<'CODE'
 // Load an XML file
-$library = simplexml_load_file('library.xml');
+$library = simplexml_load_file('xml\library.xml');
 print_r($library);
 CODE
 );
 echo 'Load an XML string, the OO way';
 showcode(<<<'CODE'
 // Load an XML string
-$xmlstr = file_get_contents('library.xml');
+$xmlstr = file_get_contents('xml\library.xml');
 $library = new SimpleXMLElement($xmlstr);
 print_r($library);
 CODE
@@ -28,13 +28,13 @@ CODE
 echo 'Load an XML file, the OO way';
 showcode(<<<'CODE'
 // Load an XML file
-$library = new SimpleXMLElement('library.xml', NULL, true);
+$library = new SimpleXMLElement('xml\library.xml', NULL, true);
 print_r($library);
 CODE
 );
 echo '<h3>Listing 8.8: SimpleXML usage</h3>';
 showcode(<<<'CODE'
-$library = new SimpleXMLElement('library.xml', NULL, true);
+$library = new SimpleXMLElement('xml\library.xml', NULL, true);
 foreach ($library->book as $book) {
     echo $book['isbn'] . "\n";
     echo $book->title . "\n";
@@ -45,7 +45,7 @@ CODE
 );
 echo '<h3>Listing 8.9: Iterating with SimpleXML</h3>';
 showcode(<<<'CODE'
-$library = new SimpleXMLElement('library.xml', NULL, true);
+$library = new SimpleXMLElement('xml\library.xml', NULL, true);
 foreach ($library->children() as $child) {
     echo $child->getName() . ":\n";
     // Get attributes of this element
@@ -64,7 +64,7 @@ CODE
 echo '<h2>XPath Queries</h2>';
 echo '<h3>Listing 8.10: XPath queries in SimpleXML</h3>';
 showcode(<<<'CODE'
-$library = new SimpleXMLElement('library.xml', NULL, true);
+$library = new SimpleXMLElement('xml\library.xml', NULL, true);
 // Search the root element
 $results = $library->xpath('/library/book/title');
 foreach ($results as $title) {
@@ -80,7 +80,7 @@ CODE
 
 echo '<h3>Listing 8.11: Adding children in SimpleXML</h3>';
 showcode(<<<'CODE'
-$library = new SimpleXMLElement('library.xml', NULL, true);
+$library = new SimpleXMLElement('xml\library.xml', NULL, true);
 $book = $library->addChild('book');
 $book->addAttribute('isbn', '0812550706');
 $book->addChild('title', "Ender's Game");
@@ -90,7 +90,7 @@ $book->addChild('publisher', 'Tor Science Fiction');
 echo $library->asXML();
 CODE
 );
-echo '<h3>Listing 8.12: library.xml</h3>';
+echo '<h3>Listing 8.12: xml\library.xml</h3>';
 showXMLdoc(<<<'CODE'
 <?xml version="1.0"?>
 <library xmlns="http://example.org/library"
@@ -120,16 +120,6 @@ $namespaces = $library2->getNamespaces(true);
 foreach ($namespaces as $key => $value) {
 echo "{$key} => {$value}\n";
 }
-CODE
-);
-echo '<h2></h2>';
-echo '';
-showcode(<<<'CODE'
-CODE
-);
-echo '<h2></h2>';
-echo '';
-showcode(<<<'CODE'
 CODE
 );
 echo '<h2></h2>';
