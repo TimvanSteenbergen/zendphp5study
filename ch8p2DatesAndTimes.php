@@ -42,7 +42,7 @@ $date = new \DateTime("3 weeks ago", $timezone);
 print_r ($date);
 CODE
 );
-echo 'Some datemethods:';
+echo 'Some datemethods: setDate, setISOdate, setTime, setTimestamp';
 showcode(<<<'CODE'
 $date = new \DateTime();
 $date->setDate(1984,11,01); // year, month, day
@@ -83,16 +83,45 @@ CODE
 echo '<h3>Listing 8.4: Comparing dates</h3>';
 showcode(<<<'CODE'
 $date = new \DateTime("2014-05-31 1:30pm EST");
-$tz = new \DateTime("Europe/Amsterdam");
+$tz = new \DateTimeZone("Europe/Amsterdam");
 $date2 = new \DateTime("2014-05-31 8:30pm", $tz);
 if ($date == $date2) {
 echo "These dates are the same date/time!";
 }
 CODE
 );
-echo '<h2></h2>';
-echo '';
+echo '<h3>DateTime Math</h3>';
 showcode(<<<'CODE'
+$date = new \DateTime();
+$date->modify("+1 month");
+echo $date->format(\DateTime::ISO8601) ."\n";
+CODE
+);
+echo '<h3>Listing 8.5: Working with intervals</h3>';
+showcode(<<<'CODE'
+$date = new \DateTime();
+$interval = new \DateInterval('P1Y3M4DT45M');
+// Add 1 year, 3 months, 4 days, 45 minutes
+$date->add($interval);
+echo $date->format(\DateTime::ISO8601) ."\n";
+
+$date = new \DateTime();
+// Subtract 1 year, 3 months, 4 days, 45 minutes
+$date->sub($interval);
+echo $date->format(\DateTime::ISO8601) ."\n";
+CODE
+);
+echo '<h3>Listing 8.6: Calculating date differences</h3>';
+showcode(<<<'CODE'
+$davey = new \DateTime(
+"1984-05-31 00:00",
+new \DateTimeZone("Europe/London")
+);
+$gabriel = new \DateTime(
+"2014-04-07 00:00",
+new \DateTimeZone("America/New_York")
+);
+print_r($davey->diff($gabriel));
 CODE
 );
 
