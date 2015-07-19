@@ -44,11 +44,22 @@ $a[] = 44; print_r($a);// This will have a key of 5
 CODE
 );
 echo '<h3>Array definitions</h3>';
+echo 'What will happen if you enter this to $c: 10.0=>\'float10.0\'  and does it\'s position matter?';
 showcode(<<<'CODE'
-$c = [0,1,2,3,'a'=>4,'b'=>5,6=>6,4=>8,
-    10=>'int10', '10'=>'string10singelquotes', "10"=>'string10doublequotes',
-    '10.0'=>'string10.0', '10,0'=>'string10,0'];
-var_dump($c);
+$c = [0,
+1,
+2,
+3,
+'a'=>4,
+'b'=>5,
+6=>6,
+4=>8,
+10=>'int10',
+'10'=>'string10singelquotes',
+"10"=>'string10doublequotes',
+'10.0'=>'string10.0',
+'10,0'=>'string10,0'];
+print_r($c);
 CODE
 );
 echo '<h3>The language construct list</h3>';

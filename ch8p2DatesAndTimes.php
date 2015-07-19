@@ -56,18 +56,38 @@ print_r ($date);
 CODE
 );
 
-echo '<h3></h3>';
-echo '';
+echo 'Show a date in some format is always done with date->format';
 showcode(<<<'CODE'
+$date = new DateTime();
+echo $date->format($date::ATOM) . "\n";
+echo $date->format($date::COOKIE) . "\n";;
+echo $date->format($date::ISO8601) . "\n";;
+echo $date->format($date::RFC822) . "\n";;
+echo $date->format($date::RFC850) . "\n";;
+echo $date->format($date::RFC1036) . "\n";;
+echo $date->format($date::RFC1123) . "\n";;
+echo $date->format($date::RFC2822);
+
 CODE
 );
-echo '';
+echo 'Handling Custom Formats';
 showcode(<<<'CODE'
+$ambiguousDate = '10/11/12';
+$date = \DateTime::createFromFormat("d/m/y", $ambiguousDate);
+echo $date->format(\DateTime::ISO8601) ."\n";
+$date = \DateTime::createFromFormat("y/m/d", $ambiguousDate);
+echo $date->format(\DateTime::ISO8601) ."\n";
 CODE
 );
 
-echo '<h2></h2>';
+echo '<h3>Listing 8.4: Comparing dates</h3>';
 showcode(<<<'CODE'
+$date = new \DateTime("2014-05-31 1:30pm EST");
+$tz = new \DateTime("Europe/Amsterdam");
+$date2 = new \DateTime("2014-05-31 8:30pm", $tz);
+if ($date == $date2) {
+echo "These dates are the same date/time!";
+}
 CODE
 );
 echo '<h2></h2>';

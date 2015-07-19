@@ -80,9 +80,8 @@ showcode(<<<'CODE'
 $json = '{ "name": "Davey Shafik", "age": 30 }';
 $data = json_decode($json);
 print_r($data);
-echo '<br/>';
 $data = json_decode($json, true);
-echo $data;
+print_r($data);
 CODE
 );
 
