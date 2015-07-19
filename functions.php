@@ -56,3 +56,23 @@ function showcode($code, $lines = null){
     echo '<br/>';
     echo '</div>';
 }
+
+function showXMLdoc($code){
+    $stringarray = explode("\n",$code);
+    $numoflines = min(20, max(3, count($stringarray)));
+    $numofcolumnssource = 60;
+    $numofcolumnsresult = 80;
+    $id = microtime(true)*rand();
+    $bgcolor = dechex(rand(190,256)*256*256 + rand(190,256)*256 + rand(190,256));
+
+    echo '<div style="background-color: #' . $bgcolor . '; padding:5px;">';
+//    echo '<label for="source'.$id.'" rows="'.$numoflines .'">Sourcecode:</label>';
+    echo '<textarea id="source'.$id.'" rows="'.$numoflines .'" cols="' . $numofcolumnssource . '">'.$code.'</textarea>';
+    echo '<div style="display:inline-block;vertical-align: top;"><input type="button" value="> Evaluates to >" onclick="EvaluateAgain(\''.$id.'\')" style="height:20px;"/></div>';
+    echo '<textarea id="result'.$id.'" rows="'.$numoflines .'" cols="' . $numofcolumnsresult . '">';
+    $xml = new SimpleXMLElement($code);
+    print_r($xml);
+    echo '</textarea>';
+    echo '<br/>';
+    echo '</div>';
+}

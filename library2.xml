@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<library xmlns="http://example.org/library"
+         xmlns:meta="http://example.org/book-meta"
+         xmlns:pub="http://example.org/publisher"
+         xmlns:foo="http://example.org/foo">
+    <book meta:isbn="0345342968">
+        <title>Fahrenheit 451</title>
+        <author>Ray Bradbury</author>
+        <pub:publisher>Del Rey</pub:publisher>
+    </book>
+</library>
