@@ -1,18 +1,18 @@
 <?php
-//This is the template codebitpagina
-//Codebits
+include_once('index.php');
 
-//Listing 6.2: Detecting end-of-file
+echo ('<h2>H6 - paragraph Detecting end-of-file</h2>');
+echo ('<h3>Listing 6.2: Detecting end-of-file</h3>');
+showcode(<<<'CODE'
 if (!file_exists ("counter.txt")) {
-    echo 'Yep, file counter.txt does not exist yet, thus the Exception gets thrown.Manually create the file and try again.';
-    throw new Exception ("The file does not exists");
+    throw new Exception ("The file counter.txt does not exist. Create it!");
 }
 $file = fopen("counter.txt", "r");
 $txt = '';
 while (!feof($file)) {
     $txt .= fread($file, 1);
 }
-echo "Listing 6.2 says: There have been $txt hits to Listing 6.1 of this site.";
-
-//Einde van de Codebits
-include_once('index.php');
+echo "Listing 6.2 says:
+There have been $txt hits to Listing 6.1 of this site.";
+CODE
+);

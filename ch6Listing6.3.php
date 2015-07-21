@@ -1,8 +1,9 @@
 <?php
-//This is the template codebitpagina
-//Codebits
+include_once('index.php');
 
-// open for reading and writing
+echo ('<h2>H6 - paragraph Reading files with file handles</h2>');
+echo ('<h3>Listing 6.3: open for reading and writing</h3>');
+showcode(<<<'CODE'
 $f = fopen('file.csv', 'a+');
 while ($row = fgetcsv($f)) {
 // handle values,
@@ -17,9 +18,8 @@ $values = array(
 fputcsv($f, $values);
 fclose($f);
 
-echo 'If all went well, a file has now been created named file.csv, containing the arrayvalues.<br/>';
-echo 'Look for the file and check the contents.<br/>';
-echo 'Try refreshing and see what happens<br/>';
-
-//Einde van de Codebits
-include_once('index.php');
+echo 'If all went well, a file has now been created named file.csv, containing the arrayvalues.
+Look for the file and check the contents.
+Try refreshing and see what happens';
+CODE
+);
