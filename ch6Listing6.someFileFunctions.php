@@ -1,7 +1,9 @@
 <?php
-//This is the template codebitpagina
-//Codebits
+include_once('index.php');
 
+echo ('<h2>H6 - paragraph Accessing network resources as files</h2>');
+echo ('<h3>Listing 6.4: Accessing network resources as files</h3>');
+showcode(<<<'CODE'
 if(is_writable('counter.txt')){
     'counter.txt is writable!';
 } else{
@@ -15,7 +17,8 @@ if(is_writable('counter.txt')){
 } else{
     'counter.txt is not writable anymore!';
 }
-
-
-//Einde van de Codebits
-include_once('index.php');
+CODE
+);
+showcode(<<<'CODE'
+CODE
+);

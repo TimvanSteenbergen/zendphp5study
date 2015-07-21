@@ -20,3 +20,6 @@ echo "Listing 6.1 says:
 There has been $counter hits to this site.";
 CODE
 );
+showcode(<<<'CODE'
+CODE
+);

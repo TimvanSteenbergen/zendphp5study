@@ -16,3 +16,6 @@ echo "Listing 6.2 says:
 There have been $txt hits to Listing 6.1 of this site.";
 CODE
 );
+showcode(<<<'CODE'
+CODE
+);

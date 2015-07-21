@@ -4,7 +4,6 @@ include_once('index.php');
 echo ('<h2>H6 - paragraph Accessing network resources as files</h2>');
 echo ('<h3>Listing 6.4: Accessing network resources as files</h3>');
 showcode(<<<'CODE'
-//
 $f = fopen('https://example.com', 'r');
 $page = '';
 if ($f) {
@@ -17,5 +16,8 @@ if ($f) {
     );
 }
 var_dump($page);
+CODE
+);
+showcode(<<<'CODE'
 CODE
 );

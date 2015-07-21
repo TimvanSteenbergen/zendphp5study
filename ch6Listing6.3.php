@@ -23,3 +23,6 @@ Look for the file and check the contents.
 Try refreshing and see what happens';
 CODE
 );
+showcode(<<<'CODE'
+CODE
+);
