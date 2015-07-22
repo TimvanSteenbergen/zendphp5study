@@ -34,7 +34,17 @@ if (isset ( $_GET ["codeJSON"] )){
     return;
 }
 
-function showcode($code, $lines = null){
+function showcodeEchoEachLinesResult($code){
+    $lines = explode("\n",$code);
+    foreach ($lines as $line) {
+        $posIs = strpos('=',$line);
+        $var  = substr($line, 1, $posIs - 1);
+        $result = eval($line);
+        echo '$' . $var. ' = ' . $result . '\n';
+    }
+}
+
+function showcode($code, $lines = null, $echoeachline = false){
     $stringarray = explode("\n",$code);
     if($lines!==NULL){
         $numoflines = $lines;
@@ -51,7 +61,18 @@ function showcode($code, $lines = null){
     echo '<textarea id="source'.$id.'" rows="'.$numoflines .'" cols="' . $numofcolumnssource . '">'.$code.'</textarea>';
     echo '<div style="display:inline-block;vertical-align: top;"><input type="button" value="> Evaluates to >" onclick="EvaluateAgain(\''.$id.'\')" style="height:20px;"/></div>';
     echo '<textarea id="result'.$id.'" rows="'.$numoflines .'" cols="' . $numofcolumnsresult . '">';
-    eval($code);
+    if ($echoeachline) {
+        foreach ($stringarray as $line) {
+            $posIs = strpos($line,'=');
+            $var  = substr($line, 1, $posIs - 2);
+            $line = $line . 'echo $$var;';
+            echo '$' . $var. ' = ';
+            eval($line);
+            echo ";\n";
+        }
+    }else{
+        eval($code);
+    }
     echo '</textarea>';
     echo '<br/>';
     echo '</div>';
