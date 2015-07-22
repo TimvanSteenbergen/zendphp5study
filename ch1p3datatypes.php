@@ -30,8 +30,18 @@ CODE
 );
 echo 'Converting Between Data Types';
 showcode(<<<'CODE'
-$x = 10.88;
-echo (int) $x; // Outputs 10
+$x = 10.88;                            echo (int) $x. "\n";
+$x = "10.88";                          echo (int) $x. "\n";
+$x = "10,88";                          echo (int) $x. "\n";
+$x = "10,88";                          echo (float) $x. "\n";
+env(
+$x = "10.88ssdf234234";                echo (float) $x. "\n";
+$x = "10.88";                          echo (string) $x. "\n";
+$x = "10.8,8";             var_dump((object)(float) $x). "\n";
+CODE
+);
+showcode(<<<'CODE'
+echo (int) ((0.1 + 0.7) * 10);
 CODE
 );
 showcode(<<<'CODE'
@@ -46,9 +56,5 @@ echo (log10($i)+1). "\n";
 echo 40 -( log10($i)+1 +strlen("@telfort.nl") ). "\n";
 echo (log10($i)+1). "\n";
 echo strlen(sprintf('%d',$i));
-CODE
-);
-showcode(<<<'CODE'
-echo (int) ((0.1 + 0.7) * 10);
 CODE
 );

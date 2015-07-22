@@ -4,24 +4,30 @@ body {
 }
 
 a {
-    display: block
+    display: block;
+    text-decoration: none;
+    font-size: 100%;
 }
 
 #content {
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 300px;
 }
 
 h1 {
     color: green;
-    font-size: 12px;
+    font-size: 105%;
 }
-.codesource{
+#content > div {
+    display: none;
+}
+.codesource {
     border: 3px solid #aaaaff;
     background-color: #ddddff;
 }
-.coderesult{
+
+.coderesult {
     background-color: #ffdddd;
 }
