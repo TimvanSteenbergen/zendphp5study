@@ -7,6 +7,7 @@
  * Time: 12:32
  */
 include_once('index.php');
+echo '<input id="chapter" type="hidden" value="5">';
 
 echo "<h2 id='numbertypes'>Listing 5.1: An HTML form</h2>";
 echo "Not really useful since it does not work with eval() (yet)";

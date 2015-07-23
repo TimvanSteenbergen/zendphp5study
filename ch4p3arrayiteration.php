@@ -8,8 +8,9 @@
  */
 
 include_once('index.php');
+echo '<input id="chapter" type="hidden" value="4">';
 
-echo '<h2>Chapter 4 Array iterations</h2>';
+echo '<h2>Chapter 4 - paragraph Array iterations</h2>';
 echo '<h3>The Array Pointer</h3>';
 echo 'Listing 4.5: Using the array pointer';
 showcode (<<<'CODE'

@@ -1,5 +1,6 @@
 <?php
 include_once('index.php');
+echo '<input id="chapter" type="hidden" value="8">';
 
 echo '<h2>Chapter 8 - paragraph Dates and Times</h2>';
 echo '<h3>Listing 8.3: Datetime construction</h3>';

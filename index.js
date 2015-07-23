@@ -2,6 +2,13 @@ $(document).ready (function() {
     $('h1').click (function(){
         $(this.nextElementSibling).toggle();
     })
+
+    try {
+        chapter = document.getElementById('chapter').value;
+    } catch (EventException) {
+        alert('Chapter niet aangegeven. Voorzie deze pagina van een hidden input met id chapter.');
+    }
+    $('#'+chapter).show();
 });
 
 function EvaluateAgain(i){

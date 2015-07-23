@@ -7,8 +7,11 @@
  * Time: 12:32
  */
 include_once('index.php');
+echo '<input id="chapter" type="hidden" value="1">';
 
-echo '<h2>Chapter 1 Datatypes</h2>';
+echo '<h2 id="syntax">Chapter 1 - paragraph Syntax</h2>';
+echo '<h2 id="anatomy">Chapter 1 - paragraph Anatomy of a PHP script</h2>';
+echo '<h2 id="datatypes">Chapter 1 - paragraph Datatypes</h2>';
 //echo 'Numeric Values: Decimal, Octal, Hexadecimal and Binary. And floats with decimal and exponentials';
 //showcode(<<<'CODE'
 //$a = 10 + 010;
@@ -58,3 +61,17 @@ echo (log10($i)+1). "\n";
 echo strlen(sprintf('%d',$i));
 CODE
 );
+
+echo '<h2 id="variables">Chapter 1 Variables</h2>';
+
+echo '<h3>Type Casting</h3>';
+echo 'Listing 1.2: Casting to an object';
+showcode(<<<'CODE'
+$obj = (object) ["foo" => "bar", "baz" => "bat"];
+var_dump($obj);
+CODE
+);
+echo '<h2 id="constants">Chapter 1 Constants</h2>';
+echo '<h2 id="operators">Chapter 1 Operators</h2>';
+echo '<h2 id="controlstructures">Chapter 1 Control Structures</h2>';
+echo '<h2 id="namespaces">Chapter 1 Namespaces</h2>';

@@ -8,8 +8,9 @@
  */
 
 include_once('index.php');
+echo '<input id="chapter" type="hidden" value="4">';
 
-echo '<h2>Chapter 4 Sorting Arrays</h2>';
+echo '<h2>Chapter 4 - paragraph Sorting Arrays</h2>';
 echo 'sort()';
 showcode (<<<'CODE'
 $array = array('a' => 'foo', 'b' => 'bar', 'c' => 'baz');

@@ -1,5 +1,6 @@
 <?php
 include_once('index.php');
+echo '<input id="chapter" type="hidden" value="8">';
 
 echo '<h2>Chapter 8 - paragraph Extensible Markup Language</h2>';
 echo "NB. the file 'xml\library.xml' is in the root of this project.<br/>";

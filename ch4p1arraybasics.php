@@ -7,8 +7,9 @@
  * Time: 12:32
  */
 include_once('index.php');
+echo '<input id="chapter" type="hidden" value="4">';
 
-echo '<h2>Chapter 4 Array Basics</h2>';
+echo '<h2>Chapter 4 - paragraph Array Basics</h2>';
 showcode(<<<'CODE'
 $a = array(10, 20, 30);print_r($a);
 $a = array(a' => 10, 'b' => 20, 'cee' => 30);print_r($a);

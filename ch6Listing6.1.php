@@ -1,5 +1,6 @@
 <?php
 include_once('index.php');
+echo '<input id="chapter" type="hidden" value="6">';
 
 echo ('<h2>H6 - paragraph Reading files with file handles</h2>');
 echo ('<h3>Listing 6.1: Reading files with file handles</h3>');
