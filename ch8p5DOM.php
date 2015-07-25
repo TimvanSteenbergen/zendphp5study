@@ -63,7 +63,8 @@ CODE
 echo '<h2>Modifying XML Documents</h2>';
 echo '<h3>Listing 8.17: XPath query results with DOM</h3>';
 showcode(<<<'CODE'
-$dom = new DomDocument("xml/library.xml");
+$dom = new DomDocument();
+$dom->load("xml/library.xml");
 $xpath = new DomXPath($dom);
 $result = $xpath->query("//lib:title/text()");
 if ($result->length > 0) {
@@ -80,7 +81,8 @@ CODE
 );
 echo '<h3>Listing 8.18: Adding an element with DOM</h3>';
 showcode(<<<'CODE'
-$dom = new DomDocument("xml/library.xml");
+$dom = new DomDocument();
+$dom->load("xml/library.xml");
 $book = $dom->createElement("book");
 $book->setAttribute("meta:isbn", "9781940111001");
 $title = $dom->createElement("title");
@@ -99,7 +101,8 @@ CODE
 );
 echo '<h3>Listing 8.19: Moving a node with DOM</h3>';
 showcode(<<<'CODE'
-$dom = new DOMDocument("xml/library.xml");
+$dom = new DomDocument();
+$dom->load("xml/library.xml");
 $xpath = new DomXPath($dom);
 $xpath->registerNamespace("lib",
                           "http://example.org/library");
@@ -112,7 +115,8 @@ CODE
 );
 echo '<h3>Listing 8.20: Appending a node with DOM</h3>';
 showcode(<<<'CODE'
-$dom = new DOMDocument("xml/library.xml");
+$dom = new DomDocument();
+$dom->load("xml/library.xml");
 $xpath = new DomXPath($dom);
 $xpath->registerNamespace("lib",
                           "http://example.org/library");
@@ -122,9 +126,9 @@ print_r($result);
 CODE
 );
 echo '<h3>Listing 8.21: Duplicating a node with DOM</h3>';
-$dom = new DOMDocument("xml/library.xml");
 showcode(<<<'CODE'
-$xpath = new DomXPath($dom);
+$dom = new DomDocument();
+$dom->load("xml/library.xml");
 $xpath->registerNamespace("lib",
                           "http://example.org/library");
 $result = $xpath->query("//lib:book");

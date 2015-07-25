@@ -79,6 +79,7 @@ function showcode($code, $lines = null, $echoeachline = false){
 }
 
 function showXMLdoc($code){
+
     $stringarray = explode("\n",$code);
     $numoflines = min(20, max(3, count($stringarray)));
     $numofcolumnssource = 60;
