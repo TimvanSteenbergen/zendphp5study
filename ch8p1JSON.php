@@ -16,7 +16,7 @@ echo json_encode($array);
 CODE
 );
 
-echo '<h2>Listing 8.1: JSON options</h2>';
+echo '<h3>Listing 8.1: JSON options</h3>';
 echo 'Try removing any of the parameters, or $options from the call. Or the key from the data which might return a array, if JSON_FORCE_OBJECT is not set:';
 showcode(<<<'CODE'
 $array = [
@@ -46,7 +46,7 @@ echo json_encode($array, $options);
 CODE
 );
 
-echo '<h2>Listing 8.2: Implementing JsonSerializable</h2>';
+echo '<h3>Listing 8.2: Implementing JsonSerializable</h3>';
 showcode(<<<'CODE'
 class User implements JsonSerializable
 {

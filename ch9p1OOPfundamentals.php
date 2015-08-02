@@ -44,7 +44,7 @@ $varc->test(); // Outputs "b::test called"
 $vard->test(); // Outputs "b::test called"
 CODE
 );
-echo '<h2>Listing 9.3: Using $this</h2>';
+echo '<h3 id="p2">Listing 9.3: Using $this</h3>';
 showcode(<<<'CODE'
 class myClass
 {
@@ -68,7 +68,7 @@ $obj->{$method . 'Function'}(123);
 CODE
 );
 
-echo '<h2>Listing 9.4: Class constructors</h2>';
+echo '<h3>Listing 9.4: Class constructors</h3>';
 showcode(<<<'CODE'
 class foo
 {
@@ -83,7 +83,7 @@ new foo();
 CODE
 );
 
-echo '<h2>Listing 9.5: Class destructors</h2>';
+echo '<h3>Listing 9.5: Class destructors</h3>';
 showcode(<<<'CODE'
 class bar
 {
@@ -127,7 +127,7 @@ echo "\nUnknown var: $me->getUnknownvar";
 echo "\nExisting var: $me->getExisting";
 CODE
 );
-echo '<h2>Listing 9.6: Visibility example</h2>';
+echo '<h3>Listing 9.6: Visibility example</h3>';
 showcode(<<<'CODE'
 class foo2
 {
@@ -162,13 +162,4 @@ showcode(<<<'CODE'
 CODE
 );
 
-echo '<h2></h2>';
-showcode(<<<'CODE'
-CODE
-);
-
-echo '<h2></h2>';
-showcode(<<<'CODE'
-CODE
-);
 
