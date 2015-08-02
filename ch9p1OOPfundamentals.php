@@ -131,29 +131,29 @@ echo '<h2>Listing 9.6: Visibility example</h2>';
 showcode(<<<'CODE'
 class foo2
 {
-    public $foo = 'bar';
+    public $foo = 'bar2';
     protected $baz = 'bat';
     private $qux = 'bingo';
     function __construct() {
-        var_dump(get_object_vars($this));
+        print_r(get_object_vars($this));
     }
 }
-class bar extends foo
+class bar2 extends foo2
 {
     function __construct() {
-        var_dump(get_object_vars($this));
+        print_r(get_object_vars($this));
     }
 }
-class baz
+class baz2
 {
     function __construct() {
-        $foo = new foo();
-        var_dump(get_object_vars($foo));
+        $foo = new foo2();
+        print_r(get_object_vars($foo));
     }
 }
-new foo();
-new bar();
-new baz();
+new foo2();
+new bar2();
+new baz2();
 CODE
 );
 
