@@ -51,15 +51,15 @@ function showcode($code, $lines = null, $echoeachline = false){
     }else {
         $numoflines = min(20, max(3, count($stringarray)));
     }
-    $numofcolumnssource = 60;
-    $numofcolumnsresult = 80;
+    $numofcolumnssource = 65;
+    $numofcolumnsresult = 65;
     $id = microtime(true)*rand();
     $bgcolor = dechex(rand(190,256)*256*256 + rand(190,256)*256 + rand(190,256));
 
     echo '<div style="background-color: #' . $bgcolor . '; padding:5px;">';
 //    echo '<label for="source'.$id.'" rows="'.$numoflines .'">Sourcecode:</label>';
     echo '<textarea id="source'.$id.'" rows="'.$numoflines .'" cols="' . $numofcolumnssource . '">'.$code.'</textarea>';
-    echo '<div style="display:inline-block;vertical-align: top;"><input type="button" value="> Evaluates to >" onclick="EvaluateAgain(\''.$id.'\')" style="height:20px;"/></div>';
+    echo '<div style="display:inline-block;vertical-align: top;"><input type="button" value=">>" style="height:40px;" onclick="EvaluateAgain(\''.$id.'\')" style="height:20px;"/></div>';
     echo '<textarea id="result'.$id.'" rows="'.$numoflines .'" cols="' . $numofcolumnsresult . '">';
     if ($echoeachline) {
         foreach ($stringarray as $line) {
