@@ -13,7 +13,7 @@
 function hello($to = "World") {
     echo "Hello $to";
 }
-$funcs = get_defined_functions();
+//$funcs = get_defined_functions();
 
 ?><h1>Documentation</h1>
 <?php
@@ -23,7 +23,7 @@ $funcs = get_defined_functions();
  * @param string $bar Some Bar
  * @param array $baz An Array of Baz
  */
-function foo($bar, $baz = array()) { }
+function foo($bar, $baz = array(1,'b')) { }
 $funcs = get_defined_functions();
 foreach ($funcs['user'] as $func) {
     try {
@@ -38,16 +38,24 @@ foreach ($funcs['user'] as $func) {
         if ($param->isPassedByReference()) {
             $arg = '&';
         }
-        print_r($param->getDefaultValue() );
         if ($param->isOptional()) {
+            $defValue = $param->getDefaultValue();
+            if(is_Object($defValue)){
+                $defValue = 'Object';
+            }
+            if(is_Array($defValue)){
+                $defValue = '[' . implode(',', $defValue) . ']';
+            }
+            echo 'sdfsdf';
             $arg = '[' . $param->getName()
                 . ' = '
-                . $param->getDefaultValue() . ']';
+                . $defValue  . ']';
         } else {
             $arg = $param->getName();
         }
         $args[] = $arg;
     }
+    print_r($args);
     $prototype .= implode(", ", $args) . ' )';
     echo "<h2>$prototype</h2>
     <p>
