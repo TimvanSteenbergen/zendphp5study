@@ -59,7 +59,7 @@ function showcode($code, $lines = null, $echoeachline = false){
     echo '<div style="background-color: #' . $bgcolor . '; padding:5px;">';
 //    echo '<label for="source'.$id.'" rows="'.$numoflines .'">Sourcecode:</label>';
     echo '<textarea id="source'.$id.'" rows="'.$numoflines .'" cols="' . $numofcolumnssource . '">'.$code.'</textarea>';
-    echo '<div style="display:inline-block;vertical-align: top;"><input type="button" value=">>" style="height:40px;" onclick="EvaluateAgain(\''.$id.'\')" style="height:20px;"/></div>';
+    echo '<div style="display:inline-block;vertical-align: top;"><input title="Using eval(<code>) this evaluates to:" type="button" value=">>" style="height:40px;" onclick="EvaluateAgain(\''.$id.'\')" style="height:20px;"/></div>';
     echo '<textarea id="result'.$id.'" rows="'.$numoflines .'" cols="' . $numofcolumnsresult . '">';
     if ($echoeachline) {
         foreach ($stringarray as $line) {

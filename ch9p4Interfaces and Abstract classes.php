@@ -58,26 +58,33 @@ CODE
 );
 
 echo '<h3>Listing 9.14: Using reflection</h3>';
+//@TODO erratum: baz = array() results in a Notice 'Array to string conversion'
 showcode(<<<'CODE'
 /**
-* Say Hello
-*
-* @param string $to
-*/
+ * Created by PhpStorm.
+ * User: Gebruiker
+ * Date: 3-8-2015
+ * Time: 11:46
+ */
+/**
+ * Say Hello
+ *
+ * @param string $to
+ */
 function hello($to = "World") {
     echo "Hello $to";
 }
-$funcs = get_defined_functions();
+//$funcs = get_defined_functions();
 
 ?><h1>Documentation</h1>
 <?php
 /**
-* Do Foo
-*
-* @param string $bar Some Bar
-* @param array $baz An Array of Baz
-*/
-function foo($bar, $baz = array()) { }
+ * Do Foo
+ *
+ * @param string $bar Some Bar
+ * @param array $baz An Array of Baz
+ */
+function foo($bar, $baz = array(2=>8,4)) { }
 $funcs = get_defined_functions();
 foreach ($funcs['user'] as $func) {
     try {
@@ -93,14 +100,24 @@ foreach ($funcs['user'] as $func) {
             $arg = '&';
         }
         if ($param->isOptional()) {
+            $defValue = $param->getDefaultValue();
+            if(is_Object($defValue)){
+                $defValue = 'Object';
+            }
+            if(is_Array($defValue)){
+//                $defValue = '[' . implode(',', $defValue) . ']';
+                $defValue = serialize($defValue);
+            }
+            echo 'sdfsdf';
             $arg = '[' . $param->getName()
-            . ' = '
-            . $param->getDefaultValue() . ']';
+                . ' = '
+                . $defValue  . ']';
         } else {
             $arg = $param->getName();
         }
         $args[] = $arg;
     }
+    print_r($args);
     $prototype .= implode(", ", $args) . ' )';
     echo "<h2>$prototype</h2>
     <p>
@@ -115,8 +132,74 @@ foreach ($funcs['user'] as $func) {
 CODE
 );
 
-echo '<h3></h3>';
+echo '<h3>Listing 9.15: Using reflection with classes</h3>';
 showcode(<<<'CODE'
+/**
+* Greeting Class
+*
+* Extends a greeting to someone/thing
+*/
+class Greeting
+{
+/**
+* Say Hello
+*
+* @param string $to
+*/
+function hello($to = "World") {
+echo "Hello $to";
+}
+}
+$class = new ReflectionClass("Greeting");
+?>
+<h1>Documentation</h1>
+<h2><?php echo $class->getName(); ?></h2>
+<p>
+Comment:
+</p>
+<pre>
+<?php echo $class->getDocComment(); ?>
+</pre>
+<p>
+File: <?php echo $class->getFileName(); ?>
+<br />
+Lines: <?php echo $class->getStartLine(); ?>
+- <?php echo $class->getEndLine(); ?>
+</p>
+<?php
+foreach ($class->getMethods() as $method) {
+$prototype = $method->name . ' ( ';
+$args = array();
+foreach ($method->getParameters() as $param) {
+$arg = "";
+if ($param->isPassedByReference()) {
+$arg = '&';
+}
+if ($param->isOptional()) {
+$arg = '[' . $param->getName()
+. ' = '
+. $param->getDefaultValue() . ']';
+} else {
+$arg = $param->getName();
+}
+$args[] = $arg;
+}
+$prototype .= implode(", ", $args) . ' )';
+echo "<h3>$prototype</h3>";
+echo "
+<p>
+Comment:
+</p>
+<pre>
+" . $method->getDocComment() . "
+</pre>
+<p>
+File: " . $method->getFileName() . "
+<br />
+Lines: " . $method->getStartLine() . " - "
+. $method->getEndLine() . "
+</p>";
+}
 CODE
 );
 
