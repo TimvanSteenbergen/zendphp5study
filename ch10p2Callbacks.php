@@ -19,16 +19,19 @@ usort($array, $callback);
 CODE
 );
 echo '<h3>Listing 10.9: Using a class as a callback</h3>';
-//@todo sorter needs no (); usort wants 2 params
+//@todo sorter needs no (); and usort wants first an array, then the sortes
 showcode(<<<'CODE'
-class Sorter()
+class Sorter
 {
     public function __invoke($a, $b) {
     // Sort
+          return ($a < $b) ? -1 : 1;
     }
 }
 $sorter = new Sorter();
-usort($sorter);
+$array = [1,4,2,3,5];
+usort($array, $sorter);
+print_r($array);
 CODE
 );
 echo '<h3>Listing 10.10: Userland callbacks</h3>';
