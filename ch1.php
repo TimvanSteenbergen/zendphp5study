@@ -37,7 +37,6 @@ $x = 10.88;                            echo (int) $x. "\n";
 $x = "10.88";                          echo (int) $x. "\n";
 $x = "10,88";                          echo (int) $x. "\n";
 $x = "10,88";                          echo (float) $x. "\n";
-env(
 $x = "10.88ssdf234234";                echo (float) $x. "\n";
 $x = "10.88";                          echo (string) $x. "\n";
 $x = "10.8,8";             var_dump((object)(float) $x). "\n";
