@@ -9,4 +9,3 @@ A great way to get to know PHP.</p>
 <li>In your browser go to 'localhost:8000'</li>
 </ul>
 </p>
-
