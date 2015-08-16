@@ -1,5 +1,5 @@
 <?php
-include_once('index.php');
+include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="11">';
 echo '<h2>Chapter 11 - paragraph Designing Codes</h2>';
 echo '<h3>Listing 11.1: Defining a trait</h3>';

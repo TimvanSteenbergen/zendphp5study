@@ -7,7 +7,7 @@
  * Time: 12:32
  */
 
-include_once('index.php');
+include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="4">';
 
 echo '<h2>Chapter 4 - paragraph Array iterations</h2>';

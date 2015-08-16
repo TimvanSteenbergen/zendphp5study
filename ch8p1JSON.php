@@ -1,5 +1,5 @@
 <?php
-include_once('index.php');
+include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="8">';
 echo '<h2>Chapter 8 - paragraph JSON encoding data</h2>';
 

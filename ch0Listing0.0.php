@@ -8,4 +8,4 @@
 
 
 //Einde van de Codebits
-include_once('index.php');
+include_once('generalIncludes.php');

@@ -6,7 +6,7 @@
  * Date: 6-6-2015
  * Time: 12:32
  */
-include_once('index.php');
+include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="1">';
 
 echo '<h2 id="syntax">Chapter 1 - paragraph Syntax</h2>';
@@ -31,7 +31,7 @@ $a = 1.2E2 + 0b10;                         echo $a . "\n";
 $a = 10 + 0b10;                            echo $a . "\n";
 CODE
 );
-echo 'Converting Between Data Types';
+echo "<h3>Converting Between Data Types</h3>";
 showcode(<<<'CODE'
 $x = 10.88;                            echo (int) $x. "\n";
 $x = "10.88";                          echo (int) $x. "\n";
@@ -42,7 +42,9 @@ $x = "10.88";                          echo (string) $x. "\n";
 $x = "10.8,8";             var_dump((object)(float) $x). "\n";
 CODE
 );
+echo "<h3>Float's precision issue</h3>";
 showcode(<<<'CODE'
+var_export(0.1 + 0.7); echo "\n";
 echo (int) ((0.1 + 0.7) * 10);
 CODE
 );

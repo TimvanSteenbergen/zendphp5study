@@ -1,5 +1,5 @@
 <?php
-include_once('index.php');
+include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="6">';
 
 echo ('<h2>H6 - paragraph Detecting end-of-file</h2>');

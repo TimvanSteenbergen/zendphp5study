@@ -1,5 +1,5 @@
 <?php
-include_once('index.php');
+include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="8">';
 
 echo '<h2>Chapter 8 - paragraph DOM</h2>Loading and saving XML Documents, XPATH queries and Modifying XML documents<br/>NB. the file \'library.xml\' is in the root\xml of this project.<br/>';

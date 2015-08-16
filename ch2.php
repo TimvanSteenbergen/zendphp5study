@@ -6,7 +6,7 @@
  * Date: 6-6-2015
  * Time: 12:32
  */
-include_once('index.php');
+include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="2">';
 
 echo '<h2 id="syntax">Chapter 2 - paragraph Syntax</h2>';

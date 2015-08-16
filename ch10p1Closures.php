@@ -1,5 +1,5 @@
 <?php
-include_once('index.php');
+include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="10">';
 echo '<h2>Chapter 10 - paragraph Closures</h2>';
 echo '<h3>Listing 10.1: Creating a closure</h3>';

@@ -6,14 +6,14 @@
  * Date: 6-6-2015
  * Time: 12:32
  */
-include_once('index.php');
+include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="5">';
 
 echo "<h2 id='numbertypes'>Listing 5.1: An HTML form</h2>";
 echo "Not really useful since it does not work with eval() (yet)";
 showcode(<<<'CODE'
 <!--Form submitted with GET-->
-<form action="index.php" method="GET">
+<form action="generalIncludes.php" method="GET">
 List: <input type="text" name="list" /><br />
 Order by:
 <select name="orderby">
@@ -28,7 +28,7 @@ Sort order:
 </select>
 </form>
 <!--Form submitted with POST-->
-<form action="index.php" method="POST">
+<form action="generalIncludes.php" method="POST">
 <input type="hidden" name="login" value="1" />
 <input type="text" name="user" />
 <input type="password" name="pass" />
