@@ -9,9 +9,9 @@
 include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="1">';
 
-echo '<h2 id="syntax">Chapter 1 - paragraph Syntax</h2>';
-echo '<h2 id="anatomy">Chapter 1 - paragraph Anatomy of a PHP script</h2>';
-echo '<h2 id="datatypes">Chapter 1 - paragraph Datatypes</h2>';
+echo '<h2 id="syntax">Chapter 1 PHP basics - paragraph Syntax</h2>';
+echo '<h2 id="anatomy">Chapter 1 PHP basics - paragraph Anatomy of a PHP script</h2>';
+echo '<h2 id="datatypes">Chapter 1 PHP basics - paragraph Datatypes</h2>';
 //echo 'Numeric Values: Decimal, Octal, Hexadecimal and Binary. And floats with decimal and exponentials';
 //showcode(<<<'CODE'
 //$a = 10 + 010;
@@ -63,16 +63,92 @@ echo strlen(sprintf('%d',$i));
 CODE
 );
 
-echo '<h2 id="variables">Chapter 1 Variables</h2>';
+echo '<h2 id="variables">Chapter 1 PHP basics - Variables</h2>';
 
 echo '<h3>Type Casting</h3>';
 echo 'Listing 1.2: Casting to an object';
 showcode(<<<'CODE'
-$obj = (object) ["foo" => "bar", "baz" => "bat"];
-var_dump($obj);
+    $obj = (object) ["foo" => "bar", "baz" => "bat"];
+    var_dump($obj);
 CODE
 );
-echo '<h2 id="constants">Chapter 1 Constants</h2>';
-echo '<h2 id="operators">Chapter 1 Operators</h2>';
-echo '<h2 id="controlstructures">Chapter 1 Control Structures</h2>';
-echo '<h2 id="namespaces">Chapter 1 Namespaces</h2>';
+
+echo 'Listing 1.3: Circumventing naming constraints';
+showcode(<<<'CODE'
+$name = '123'; // 123 as variable name would normally be invalid.
+$$name = '456';// Again, you assign a value.
+echo ${'123'}; // Finally, using curly braces you can output '456'
+CODE
+);
+
+echo 'Listing 1.4: Using print_r';
+showcode(<<<'CODE'
+$array = array(
+    'foo',
+    'bar',
+    'baz',
+);
+print_r($array);
+$obj = new StdClass();
+$obj->foo = "bar";
+$obj->baz = "bat";
+print_r($obj);
+CODE
+);
+
+echo 'using var_dump';
+showcode(<<<'CODE'
+var_dump(null, false, "", 1, 2.3,
+    array("foo", "bar", "baz" => 1.23, yes, true)
+);
+CODE
+);
+showcode(<<<'CODE'
+$array = array(
+    "foo" => "bar",
+    "baz" => "bat"
+);
+var_export($array);
+$obj = new StdClass();
+$obj->foo = "bar";
+$obj->baz = "bat";
+var_export($obj);
+CODE
+);
+echo 'Determining If a Variable Exists';
+showcode(<<<'CODE'
+echo "x is ", (!isset($x)) ? "not" : "", " set.\n";
+$x = 1;
+echo (isset($x)) ? "now \$x is $x.\n" : "\$x is still not set";
+CODE
+);
+
+echo 'Determining If a Variable Empty';
+showcode(<<<'CODE'
+$variable = "22";
+echo ((empty($variable))?"is empty":"is not empty");
+CODE
+);
+
+echo '<h2 id="constants">Chapter 1 PHP basics - Constants</h2>';
+echo 'Listing 1.6: defining constants';
+showcode(<<<'CODE'
+define('EMAIL', 'davey@php.net'); // Valid name
+echo EMAIL; // Displays 'davey@php.net'
+define('USE_XML', true);
+if (USE_XML) { } // Evaluates to true
+define('1CONSTANT', 'some value'); // Invalid name
+echo "\n\n\n\n From PHP 5.3 you can also use the const keyword to define constants: \n";
+const EMAIL2 = 'davey@php.net';
+echo EMAIL2;
+echo "\n\n Also, from PHP 5.6 you can use constant scalar expressions to define the value:\n";
+const DOMAIN = "php.net";
+const EMAIL3 = "davey@" . DOMAIN;
+echo EMAIL3;
+CODE
+);
+
+echo '';
+echo '<h2 id="operators">Chapter 1 PHP basics - Operators</h2>';
+echo '<h2 id="controlstructures">Chapter 1 PHP basics - Control Structures</h2>';
+echo '<h2 id="namespaces">Chapter 1 PHP basics - Namespaces</h2>';
