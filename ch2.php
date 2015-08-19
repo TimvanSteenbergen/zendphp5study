@@ -19,3 +19,9 @@ CODE
 showcode(<<<'CODE'
 CODE
 );
+class E{
+    protected $a;
+    private $b;
+    public $c;
+
+}

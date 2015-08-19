@@ -74,6 +74,18 @@ showcode(<<<'CODE'
     var_dump($obj);
 CODE
 );
+echo 'Casting to a boolean: any inputvalue other then 0, "0", "", or NULL is false';
+showcode(<<<'CODE'
+var_dump ((boolean)-1);
+var_dump ((boolean)1);
+var_dump ((boolean)5.1);
+var_dump ((boolean)"-1sadfasdfsadf");
+var_dump ((boolean)"0");
+var_dump ((boolean)"");
+var_dump ((boolean)0);
+var_dump ((boolean)NULL);
+CODE
+);
 
 echo 'Listing 1.3: Circumventing naming constraints';
 showcode(<<<'CODE'
