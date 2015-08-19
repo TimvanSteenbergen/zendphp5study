@@ -8,8 +8,8 @@
  */
 include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="5">';
-
-echo "<h2 id='numbertypes'>Listing 5.1: An HTML form</h2>";
+echo ('<h2>Chapter 6 Files, Streams, and Network Programming - Paragraph paragraph Reading files with file handles</h2>');
+echo "<h3 id='numbertypes'>Listing 5.1: An HTML form</h3>";
 echo "Not really useful since it does not work with eval() (yet)";
 showcode(<<<'CODE'
 <!--Form submitted with GET-->
@@ -35,7 +35,7 @@ Sort order:
 </form>
 CODE
 ,4);
-echo '<h2>Listing 5.2: An HTML form with array notation</h2>';
+echo '<h3>Listing 5.2: An HTML form with array notation</h3>';
 showcode(<<<'CODE'
 <form method="post">
 <p>
@@ -82,7 +82,7 @@ echo "Unknown language!";
 }
 CODE
 ,4);
-echo '<h2>Listing 5.7: Custom session handler class before 5.4</h2>';
+echo '<h3>Listing 5.7: Custom session handler class before 5.4</h3>';
 showcode(<<<'CODE'
 class JsonSessionHandler
 {
@@ -144,7 +144,7 @@ session_set_save_handler(
 );
 CODE
 );
-echo '<h2>Listing 5.8: Custom session handler class with 5.4</h2>';
+echo '<h3>Listing 5.8: Custom session handler class with 5.4</h3>';
 showcode(<<<'CODE'
 class JsonSessionHandler implements SessionHandlerInterface
 {
@@ -199,7 +199,8 @@ $handler = new JsonSessionHandler;
 session_set_save_handler($handler);
 CODE
 );
-echo "<h2 id='variableinterpolation'>Variable interpolation</h2>";
+
+echo "<h3 id='variableinterpolation'>Variable interpolation</h3>";
 showcode(<<<'CODE'
 $who = "World";
 echo "Hello $who\n";
@@ -217,7 +218,7 @@ showcode(<<<'CODE'
 CODE
 );
 
-echo "<h2 id='heredoc'>The Heredoc and Nowdoc Syntax</h2>";
+echo "<h3 id='heredoc'>The Heredoc and Nowdoc Syntax</h3>";
 showcode(<<<'CODE'
 $who = "World";
 echo <<<TEXT
@@ -247,8 +248,7 @@ showcode(<<<'CODE'
 CODE
 );
 
-
-echo "<h2 id='escaping'>Escaping literal values</h2>";
+echo "<h3 id='escaping'>Escaping literal values</h3>";
 showcode(<<<'CODE'
 echo 'This is \'my\' string';
 CODE
@@ -262,15 +262,5 @@ CODE
 
 showcode(<<<'CODE'
 echo "Here's an escaped backslash: - \\ -";
-CODE
-);
-
-showcode(<<<'CODE'
-echo "Here's a literal brace + dollar sign: {\$";
-CODE
-);
-
-showcode(<<<'CODE'
-echo "Here's a literal brace + dollar sign: {\$";
 CODE
 );

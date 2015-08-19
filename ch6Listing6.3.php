@@ -2,7 +2,7 @@
 include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="6">';
 
-echo ('<h2>H6 - paragraph Reading files with file handles</h2>');
+echo ('<h2>Chapter 6 Files, Streams, and Network Programming - Paragraph paragraph Reading files with file handles</h2>');
 echo ('<h3>Listing 6.3: open for reading and writing</h3>');
 showcode(<<<'CODE'
 $f = fopen('file.csv', 'a+');

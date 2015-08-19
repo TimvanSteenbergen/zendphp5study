@@ -2,7 +2,7 @@
 include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="8">';
 
-echo '<h2>Chapter 8 - paragraph SimpleXML</h2>Parsing XML Documents<br/>NB. the file \'library.xml\' is in the root\xml of this project.<br/>';
+echo '<h2>Chapter 8 Data Formats and Types - Paragraph paragraph SimpleXML</h2>Parsing XML Documents<br/>NB. the file \'library.xml\' is in the root\xml of this project.<br/>';
 echo 'Load an XML string, the procedural way';
 showcode(<<<'CODE'
 // Load an XML string

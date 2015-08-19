@@ -2,7 +2,7 @@
 include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="6">';
 
-echo ('<h2>H6 - paragraph Detecting end-of-file</h2>');
+echo ('<h2>Chapter 6 Files, Streams, and Network Programming - Paragraph paragraph Detecting end-of-file</h2>');
 echo ('<h3>Listing 6.2: Detecting end-of-file</h3>');
 showcode(<<<'CODE'
 if (!file_exists ("counter.txt")) {

@@ -1,7 +1,7 @@
 <?php
 include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="8">';
-echo '<h2>Chapter 8 - paragraph JSON encoding data</h2>';
+echo '<h2>Chapter 8 Data Formats and Types - Paragraph paragraph JSON encoding data</h2>';
 
 showcode(<<<'CODE'
 $array = ["foo", "bar", 9=>'bdaz'];
@@ -74,7 +74,7 @@ $davey = [
 echo json_encode($davey);
 CODE
 );
-echo '<h2>Chapter 8 - paragraph JSON decoding data</h2>';
+echo '<h2>Chapter 8 Data Formats and Types - Paragraph paragraph JSON decoding data</h2>';
 echo 'Decode into an object or into an array.';
 showcode(<<<'CODE'
 $json = '{ "name": "Davey Shafik", "age": 30 }';

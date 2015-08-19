@@ -1,7 +1,7 @@
 <?php
 include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="9">';
-echo '<h2>Chapter 9 - paragraph Interfaces and Abstract classes</h2>';
+echo '<h2>Chapter 9 OOP Programming in PHP - Paragraph paragraph Interfaces and Abstract classes</h2>';
 echo '<h3>Listing 9.12: Using abstract classes</h3>';
 showcode(<<<'CODE'
 abstract class DataStore_Adapter

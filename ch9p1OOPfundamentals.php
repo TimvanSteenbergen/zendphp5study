@@ -1,7 +1,7 @@
 <?php
 include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="9">';
-echo '<h2>Chapter 9 - OOP fundamentals</h2>';
+echo '<h2>Chapter 9 OOP Programming in PHP - Paragraph OOP fundamentals</h2>';
 
 echo '<h2>Listing 9.1: Class inheritance</h2>';
 echo 'Try removing any of the parameters, or $options from the call. Or the key from the data which might return a array, if JSON_FORCE_OBJECT is not set:';

@@ -9,7 +9,7 @@
 include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="3">';
 
-echo "<h2 id='ch3'>Chapter 3</h2>";
+echo "<h2 id='ch3'>Chapter 3 Strings and Patterns</h2>";
 echo "<h2 id='numbertypes'>Display an asterisk</h2>";
 showcode(<<<'CODE'
 echo "\x2a";
@@ -23,7 +23,7 @@ showcode(<<<'CODE'
 CODE
 );
 
-echo "<h2 id='variableinterpolation'>Chapter 3 - paragraph Variable interpolation</h2>";
+echo "<h2 id='variableinterpolation'>Chapter 3 Strings and Patterns - paragraph Variable interpolation</h2>";
 showcode(<<<'CODE'
 $who = "World";
 echo "Hello $who\n";
@@ -41,7 +41,7 @@ showcode(<<<'CODE'
 CODE
 );
 
-echo "<h2 id='heredoc'>Chapter 3 - paragraph The Heredoc and Nowdoc Syntax</h2>";
+echo "<h2 id='heredoc'>Chapter 3 Strings and Patterns - paragraph The Heredoc and Nowdoc Syntax</h2>";
 echo "Not really useful since HEREDOC and NOWDOC does not work with eval() (yet)";
 showcode(<<<'CODE'
 $who = "World";
@@ -73,8 +73,7 @@ showcode(<<<'CODE'
 CODE
 );
 
-
-echo "<h2 id='escaping'>Chapter 3 - paragraph Escaping literal values</h2>";
+echo "<h2 id='escaping'>Chapter 3 Strings and Patterns - paragraph Escaping literal values</h2>";
 showcode(<<<'CODE'
 echo 'This is \'my\' string';
 CODE
@@ -97,6 +96,5 @@ CODE
 );
 
 showcode(<<<'CODE'
-echo "Here's a literal brace + dollar sign: {\$";
 CODE
 );

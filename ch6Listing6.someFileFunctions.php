@@ -2,7 +2,7 @@
 include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="6">';
 
-echo ('<h2>H6 - paragraph Accessing network resources as files</h2>');
+echo ('<h2>Chapter 6 Files, Streams, and Network Programming - Paragraph paragraph Accessing network resources as files</h2>');
 echo ('<h3>Listing 6.4: Accessing network resources as files</h3>');
 showcode(<<<'CODE'
 if(is_writable('counter.txt')){

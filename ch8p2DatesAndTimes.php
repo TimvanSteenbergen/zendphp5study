@@ -2,7 +2,7 @@
 include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="8">';
 
-echo '<h2>Chapter 8 - paragraph Dates and Times</h2>';
+echo '<h2>Chapter 8 Data Formats and Types - Paragraph paragraph Dates and Times</h2>';
 echo '<h3>Listing 8.3: Datetime construction</h3>';
 showcode(<<<'CODE'
 // Current Time

@@ -1,7 +1,7 @@
 <?php
 include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="10">';
-echo '<h2>Chapter 10 - paragraph Callbacks</h2>';
+echo '<h2>Chapter 10 Closures and Callbacks - Paragraph Callbacks</h2>';
 echo '<h3>Listing 10.8: Using arrays to specify callbacks</h3>';
 showcode(<<<'CODE'
 Class SomeClass

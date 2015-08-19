@@ -10,7 +10,9 @@ include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="1">';
 
 echo '<h2 id="syntax">Chapter 1 PHP basics - paragraph Syntax</h2>';
+echo 'Nothing to fiddle with in this paragraph...';
 echo '<h2 id="anatomy">Chapter 1 PHP basics - paragraph Anatomy of a PHP script</h2>';
+echo 'Nothing to fiddle with in this paragraph...';
 echo '<h2 id="datatypes">Chapter 1 PHP basics - paragraph Datatypes</h2>';
 //echo 'Numeric Values: Decimal, Octal, Hexadecimal and Binary. And floats with decimal and exponentials';
 //showcode(<<<'CODE'
@@ -148,7 +150,44 @@ echo EMAIL3;
 CODE
 );
 
-echo '';
 echo '<h2 id="operators">Chapter 1 PHP basics - Operators</h2>';
+echo 'Listing 1.7: Incrementing/decrementing operators';
+showcode(<<<'CODE'
+$a = 1;    // Assign the integer 1 to $a
+echo $a++; // Outputs 1, $a is now equal to 2
+echo ++$a; // Outputs 3, $a is now equal to 3
+echo --$a; // Outputs 2, $a is now equal to 2
+echo $a--; // Outputs 2, $a is now equal to 1
+
+echo "\n\nAnd casting string 'Test' to an integer and ++it gives: ";
+$a = (int) 'Test'; // $a == 0
+echo ++$a;
+CODE
+);
+echo 'Listing 1.8: Concatenate operators';
+showcode(<<<'CODE'
+$string = "foo" . "bar";//$string now contains the value 'foobar'
+$string2 = "baz";       //$string2 now contains the value 'baz'
+
+//This is shorthand for $string = $string . $string2
+$string .= $string2;    //Concatenating them gets 'foobarbaz'.
+
+echo $string;           //Displays 'foobarbaz'
+CODE
+);
+echo 'Listing 1.9: Bitwise multiplication';
+showcode(<<<'CODE'
+$x = 1;
+echo $x << 1, "\n"; // Outputs 2
+echo $x << 2, "\n"; // Outputs 4
+$x = 8;
+echo $x >> 1, "\n"; // Outputs 4
+echo $x >> 2, "\n"; // Outputs 2
+
+$x = 1;
+echo $x << 32, "\n";
+echo $x * pow (2, 32);
+CODE
+);
 echo '<h2 id="controlstructures">Chapter 1 PHP basics - Control Structures</h2>';
 echo '<h2 id="namespaces">Chapter 1 PHP basics - Namespaces</h2>';
