@@ -65,7 +65,7 @@ echo strlen(sprintf('%d',$i));
 CODE
 );
 
-echo '<h2 id="variables">Chapter 1 PHP basics - Variables</h2>';
+echo '<h2 id="variables">Chapter 1 PHP basics - Paragraph Variables</h2>';
 
 echo '<h3>Type Casting</h3>';
 echo 'Listing 1.2: Casting to an object';
@@ -113,7 +113,7 @@ CODE
 echo 'using var_dump';
 showcode(<<<'CODE'
 var_dump(null, false, "", 1, 2.3,
-    array("foo", "bar", "baz" => 1.23, yes, true)
+    array("foo", "bar", "baz" => 1.23, 'yes', true)
 );
 CODE
 );
@@ -144,7 +144,7 @@ echo ((empty($variable))?"is empty":"is not empty");
 CODE
 );
 
-echo '<h2 id="constants">Chapter 1 PHP basics - Constants</h2>';
+echo '<h2 id="constants">Chapter 1 PHP basics - Paragraph Constants</h2>';
 echo 'Listing 1.6: defining constants';
 showcode(<<<'CODE'
 define('EMAIL', 'davey@php.net'); // Valid name
@@ -162,7 +162,7 @@ echo EMAIL3;
 CODE
 );
 
-echo '<h2 id="operators">Chapter 1 PHP basics - Operators</h2>';
+echo '<h2 id="operators">Chapter 1 PHP basics - Paragraph Operators</h2>';
 echo 'Listing 1.7: Incrementing/decrementing operators';
 showcode(<<<'CODE'
 $a = 1;    // Assign the integer 1 to $a
@@ -176,6 +176,7 @@ $a = (int) 'Test'; // $a == 0
 echo ++$a;
 CODE
 );
+echo '<h3>Chapter 1 PHP basics - Paragraph Operators - The String Concatentation operators</h3>';
 echo 'Listing 1.8: Concatenate operators';
 showcode(<<<'CODE'
 $string = "foo" . "bar";//$string now contains the value 'foobar'
@@ -187,6 +188,8 @@ $string .= $string2;    //Concatenating them gets 'foobarbaz'.
 echo $string;           //Displays 'foobarbaz'
 CODE
 );
+
+echo '<h3>Chapter 1 PHP basics - Paragraph Operators - Bitwise operators</h3>';
 echo 'Listing 1.9: Bitwise multiplication';
 showcode(<<<'CODE'
 $x = 1;
@@ -199,6 +202,72 @@ echo $x >> 2, "\n"; // Outputs 2
 $x = 1;
 echo $x << 32, "\n";
 echo $x * pow (2, 32);
+CODE
+);
+echo 'The bitwise operators: ~ & | and ^';
+showcode(<<<'CODE'
+echo "~a, a&b, a|b, a^b\n";
+echobitwise(1,0);    //001, 000
+echobitwise(-1,1);   //
+echobitwise(3,4);    //011, 100
+echobitwise(100,111);
+echobitwise(111,111);
+function echobitwise($a, $b){
+  echo ~$a, ",", $a & $b, ",", $a | $b, ",", $a ^ $b, "\n";
+}
+CODE
+);
+echo '<h3>Chapter 1 PHP basics - Paragraph Operators - Assignment operators</h3>';
+showcode(<<<'CODE'
+$var= 'value'; echo $var,"\n";// string 'value'
+$var= 1;       echo $var,"\n";// integer value 1
+$var+= 3;      echo $var,"\n";// integer 4
+$var++;        echo $var,"\n";// integer 5
+$var.='1';     echo $var,"\n";// string 51
+CODE
+);
+echo '<h3>Chapter 1 PHP basics - Operators - Referencing variables</h3>';
+echo 'Assign by reference';
+showcode(<<<'CODE'
+$a = 10;  $b = 10;
+$va = $a; $vb = &$b; // by reference
+$va = 20; $vb = 30;
+echo "\$a=$a and \$b=$b because vb is assigned by reference";
+CODE
+);
+echo '<h3>Chapter 1 PHP basics - Paragraph Operators - Comparison operators</h3>';
+echo 'Comparison operators';
+showcode(<<<'CODE'
+echo (int) ("ABC" > "ABD") . "\n";
+echo (int) ('apple' > 'Apple');
+CODE
+);
+echo '<h3>Chapter 1 PHP basics - Paragraph Operators - Logical operators</h3>';
+echo 'Binary operators AND OR XOR';
+showcode(<<<'CODE'
+echo ((true &&  false)?"T":"F") . "\n";
+echo ((true AND false)?"T":"F") . "\n";
+echo ((true ||  false)?"T":"F") . "\n";
+echo ((true OR  false)?"T":"F") . "\n";
+echo ((true XOR false)?"T":"F") . "\n";
+echo ((1&1  &&  1|1)?"T":"F") . "\n"; //Both bitwise and binary's
+echo ((1&1  &&  1^1)?"T":"F") . "\n"; //Both bitwise and binary's
+echo ((1&1  ||  1|1)?"T":"F") . "\n"; //Both bitwise and binary's
+CODE
+);
+echo '<h3>Chapter 1 PHP basics - Paragraph Operators - Other operators</h3>';
+showcode(<<<'CODE'
+$x = @fopen("/tmp/foo"); // @ supresses errormessages
+echo `ls -l`;  // ` runs operating system commands
+CODE
+);
+echo '<h3>Chapter 1 PHP basics - Paragraph Operators - Operator precedence and Associativity</h3>';
+echo 'Binary operators &&, AND, ||, OR, XOR.';
+showcode(<<<'CODE'
+echo (int)((1&1||1^1+1) . '0')*2/5 + -2;       echo "\n";
+echo (int)(0 &&  1 ? 23 : 45);                 echo "\n";
+echo (int)(0 AND 1 ? 23 : 45);                 echo "\n";
+echo 'Preference: && || then ? : then AND OR';
 CODE
 );
 echo '<h2 id="controlstructures">Chapter 1 PHP basics - Control Structures</h2>';
