@@ -68,6 +68,7 @@ CODE
 echo '<h2 id="variables">Chapter 1 PHP basics - Paragraph Variables</h2>';
 
 echo '<h3>Type Casting</h3>';
+echo "Type has lots of unexpected (and incorrect) results, so we better get used to that." . PHP_EOL;
 echo 'Listing 1.2: Casting to an object';
 showcode(<<<'CODE'
     $obj = (object) ["foo" => "bar", "baz" => "bat"];
@@ -84,6 +85,19 @@ var_dump ((boolean)"0");
 var_dump ((boolean)"");
 var_dump ((boolean)0);
 var_dump ((boolean)NULL);
+CODE
+);
+echo "Expressions cast each value to the most important variabletype present." . PHP_EOL;
+
+echo 'Arrayvalues getting casted to an integer';
+showcode(<<<'CODE'
+var_dump(in_array('yes', ['No', 0, 'yeah']);
+CODE
+);
+echo 'Arraykeys getting casted to a boolean';
+showcode(<<<'CODE'
+$array = array (0 => '1', true => '1', '1' => 4);
+echo count ($array);
 CODE
 );
 
@@ -267,8 +281,69 @@ showcode(<<<'CODE'
 echo (int)((1&1||1^1+1) . '0')*2/5 + -2;       echo "\n";
 echo (int)(0 &&  1 ? 23 : 45);                 echo "\n";
 echo (int)(0 AND 1 ? 23 : 45);                 echo "\n";
-echo 'Preference: && || then ? : then AND OR';
+echo 'Preference: && || then ? : then AND OR'; echo "\n";
+echo 'hello ' . 1 + 2 . '34';                  echo "\n";
+echo 'Concate-ops precede arithmetic ops';     echo "\n";
 CODE
 );
 echo '<h2 id="controlstructures">Chapter 1 PHP basics - Control Structures</h2>';
+echo 'Listing 1.10: If-then-else and Listing 1.11: Nested If-then-else';
+showcode(<<<'CODE'
+if (expression1) {
+    if (expression2) {
+        // Code
+    } else {
+        // More code
+    }
+} elseif (expression2) {
+    // Note that the space between else and if is optional
+} else {
+}
+CODE
+);
+echo 'The ternary operator';
+showcode(<<<'CODE'
+$x=10;
+echo 10 == $x ? 'Yes' : 'No';
+$foo = ($bar) ?: $bat;
+CODE
+);
+echo 'Listing 1.12: Multiple matches for if-then-else AND Listing 1.13: Switch statement';
+showcode(<<<'CODE'
+$a = 0;
+if ($a) { // Evaluates to false
+} elseif ($a == 0) { // Evaluates to true
+} else { // Will only be executed if no other conditions are met
+}
+
+$a = 0;
+switch ($a) { // In this case, $a is the expression
+case true: // Compare to true: Evaluates to false
+  break;
+case 0:    // Compare to 0: Evaluates to true
+  break;
+default:   // only if no other conditions are met
+  break;
+}
+CODE
+);
+
+echo 'Listing 1.15: While and Do loops';
+showcode(<<<'CODE'
+$i = 0;
+while ($i < 10) {
+    echo $i . PHP_EOL;
+    $i++;
+}
+$i = 0;
+do {
+    echo $i . PHP_EOL;
+    $i++;
+} while ($i < 10);
+CODE
+);
 echo '<h2 id="namespaces">Chapter 1 PHP basics - Namespaces</h2>';
+echo '';
+showcode(<<<'CODE'
+CODE
+);
