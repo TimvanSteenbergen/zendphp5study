@@ -8,3 +8,5 @@ Strings and Patterns. Questions I answered wrong:<br/>
 21<br>
 <?= count(md5("1"))."\n"; echo count(md5("1asdasd", true));
 strstr("sdfsdf", "d");?>
+
+Security
