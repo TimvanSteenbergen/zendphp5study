@@ -343,7 +343,60 @@ do {
 CODE
 );
 echo '<h2 id="namespaces">Chapter 1 PHP basics - Namespaces</h2>';
-echo '';
+echo 'Listing 1.18: A namespaced class';
 showcode(<<<'CODE'
+namespace Ds\String;
+class Unicode
+{
+    protected $string;
+
+    public function __construct($string)
+    {
+        $this->string = $string;
+    }
+
+    public function strlen()
+    {
+        if (extension_loaded('iconv')) {
+            return \iconv_strlen($this->string);
+        } elseif (extension_loaded('mbstring')) {
+            return \mb_strlen($this->string);
+        }
+        return false;
+    }
+}
+CODE
+);
+echo 'Listing 1.19: A namespaced function';
+showcode(<<<'CODE'
+namespace Unicode\Tools;
+const CHARSET = 'UTF-8';
+function strlen($string) {
+    if (extension_loaded('iconv')) {
+        return \iconv_strlen($string);
+    } elseif (extension_loaded('mbstring')) {
+        return \mb_strlen($string);
+    }
+    return false;
+}
+CODE
+);
+echo 'Listing 1.20: Accessing a namespaced function before 5.6';
+showcode(<<<'CODE'
+use Unicode\Tools as UT;
+$charset = UT\CHARSET;
+UT\strlen("Jag älskar regnbågar och sköldpaddor");
+// or, fully-qualified
+$charset = \Unicode\Tools\CHARSET;
+\Unicode\Tools\strlen("Jag älskar regnbågar och sköldpaddor");
+CODE
+);
+echo 'Listing 1.21: Falling back to global scope';
+showcode(<<<'CODE'
+namespace Ds\String;
+// Does't exist, or it would override
+//use function Ds\String\iconv_strlen;
+// The same as using fully qualified \iconv_strlen()
+//echo iconv_strlen("Jag älskar regnbågar och sköldpaddor"); // outputs 36
 CODE
 );

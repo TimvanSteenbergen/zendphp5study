@@ -9,19 +9,110 @@
 include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="2">';
 
-echo '<h2 id="syntax">Chapter 2 - paragraph Syntax</h2>';
-echo '<h2 id="returningvalues">Chapter 2 - paragraph Returning values</h2>';
-echo '<h2 id="variablescope">Chapter 2 - paragraph Variable scope</h2>';
+echo '<h2 id="syntax">Chapter 2 Functions - Paragraph Basic Syntax</h2>';
+echo '<h2 id="returningvalues">Chapter 2 Functions - Paragraph Returning values</h2>';
 
+echo 'Listing 2.1: Returning a value';
 showcode(<<<'CODE'
-CODE
-);
-showcode(<<<'CODE'
-CODE
-);
-class E{
-    protected $a;
-    private $b;
-    public $c;
 
+function helloworld() {
+    return "Hello World"; // No output is shown
 }
+// Assigns the return value "Hello World" to $txt
+$txt = helloworld();
+echo helloworld(); // Displays "Hello World"
+CODE
+);
+
+echo 'Listing 2.2: Returning and exiting early';
+showcode(<<<'CODE'
+function hello($who) {
+    echo "Hello $who";
+    if ($who == "World") {
+        return; // Nothing else in the function will be processed
+    }
+    echo ", how are you";
+}
+hello("World"); // Displays "Hello World"
+hello("Reader"); // Displays "Hello Reader, how are you?"
+
+CODE
+);
+echo 'Listing 2.3: Returning by reference';
+showcode(<<<'CODE'
+function &query($sql) {
+    $result = mysql_query($sql);
+    return $result;
+}
+// The following is incorrect and will cause PHP
+// to emit a notice when called.
+function &getHello() {
+    return "Hello World";
+}
+// This will also cause the warning to be
+// issued when called
+function &test() {
+    echo 'This is a test';
+}
+CODE
+);
+echo '<h2 id="variablescope">Chapter 2 Functions - Paragraph Variable scope</h2>';
+
+echo 'Listing 2.4: Variable scope';
+showcode(<<<'CODE'
+$a = "Hello World";
+function hi() {
+    $a = "Hello Reader";
+    $b = "How are you";
+}
+hi();
+echo $a; // Will output Hello World
+echo $b; // Will emit a notice
+CODE
+);
+echo 'Listing 2.5: Accessing with the global statement';
+showcode(<<<'CODE'
+$a = "Hello";
+$b = "World";
+function hiworld() {
+    global $a, $b;
+    echo "$a $b";
+}
+hiworld(); // Displays "Hello World"
+CODE
+);
+echo 'Listing 2.6: Accessing $GLOBALS array';
+showcode(<<<'CODE'
+$a = "Hello";
+$b = "World";
+function greetings() {
+    echo $GLOBALS['a'] .' '. $GLOBALS['b'];
+}
+greetings(); // Displays "Hello World"
+CODE
+);
+echo 'Listing 2.7: Passing arguments';
+showcode(<<<'CODE'
+function hithere($who) {
+    echo "Hello $who";
+}
+hithere("World");
+CODE
+);
+
+
+echo 'Listing 2.8: Setting argument defaults';
+showcode(<<<'CODE'
+function heee($who = "World") {
+    echo "Hello $who";
+}
+heee();
+/* This time we pass in no argument and $who is assigned "World" by default. */
+heee("Reader");
+/* This time we override the default argument */
+echo '';
+CODE
+);
+showcode(<<<'CODE'
+CODE
+);
