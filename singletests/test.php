@@ -4,6 +4,18 @@
  *
  * @param string $to
  */
+echo "<pre>";
+echo "10 September 2000: " . strtotime("10 September 2000"), "\n";
+//echo "15 October 1682: " . date_add(date('Y-m-d H:i:s',time()),"-P100Y"), "\n";
+$now = new DateTime();
+echo "vandaag 1582: " . $now->sub(new DateInterval("P433Y"))->format(DateTime::ISO8601), "\n";
+echo "vandaag +1M 1582: " . $now->add(new DateInterval("P2M"))->format('Y-m-d H:i:s'), "\n";
+echo "vandaag +1M-17d 1582: " . $now->sub(new DateInterval("P17D"))->format('Y-m-d H:i:s'), "\n";
+//echo "vandaag 1564: " . $now->add(new DateInterval("P1Y"))->format('Y-m-d H:i:s'), "\n";
+$datum = strtotime("15 oktober 1882");
+print_r($datum);
+//die("");
+
 function hello($to = "World") {
     echo "Hello $to";
 }
