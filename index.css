@@ -1,12 +1,12 @@
 
 body {
-    margin-left: 260px;
+    margin-left: 180px;
 }
 
 a {
     display: block;
     text-decoration: none;
-    font-size: 100%;
+    font-size: 60%;
 }
 
 #content {
@@ -14,13 +14,21 @@ a {
     top: 0;
     left: 0;
     height: 1000px;
-    width: 260px;
+    width: 160px;
     overflow: scroll;
 }
 
 h1 {
-    color: green;
-    font-size: 105%;
+    color: #496d89;
+    font-size: 60%;
+}
+
+h2 {
+    color: #496d89; 
+}
+
+h3 {
+    color: #496d89; 
 }
 
 #content > div {
