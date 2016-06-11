@@ -24,8 +24,10 @@ echo "\052";
 CODE
 );
 
+echo "<p>Sandbox</p>";
 showcode(<<<'CODE'
-		
+// Try it yourself...
+
 CODE
 );
 
@@ -48,14 +50,16 @@ echo "Citation: {$names[1]}[1987]";
 CODE
 );
 
+echo "<p>Sandbox</p>";
 showcode(<<<'CODE'
-		
+// Try it yourself...
+
 CODE
 );
 
 
-echo "<h3 id='heredoc'>The Heredoc and Nowdoc Syntax</h3>";
-echo "Not really useful since HEREDOC and NOWDOC does not work with eval() (yet)";
+echo "<h3 id='heredoc'>Heredoc and Nowdoc Syntax</h3>";
+echo "<p>Not really useful since HEREDOC and NOWDOC does not work with eval() (yet)</p>";
 showcode(<<<'CODE'
 $who = "World";
 echo <<<TEXT
@@ -65,7 +69,7 @@ TEXT;
 CODE
 );
 
-echo "Not really useful since HEREDOC and NOWDOC does not work with eval() (yet)";
+echo "<p>Not really useful since HEREDOC and NOWDOC does not work with eval() (yet)</p>";
 showcode(<<<'CODE'
 $who = "World";
 echo <<<'TEXT'
@@ -87,8 +91,10 @@ echo $hi->greeting;
 CODE
 );
 
+echo "<p>Sandbox</p>";
 showcode(<<<'CODE'
-		
+// Try it yourself...
+
 CODE
 );
 
@@ -119,8 +125,10 @@ echo "Here's a literal brace + dollar sign: {\$";
 CODE
 );
 
+echo "<p>Sandbox</p>";
 showcode(<<<'CODE'
-		
+// Try it yourself...
+
 CODE
 );
 
@@ -163,7 +171,9 @@ for ($i = 0; $i < strlen($s); $i++) {
 CODE
 );
 
+echo "<p>Sandbox</p>";
 showcode(<<<'CODE'
+// Try it yourself...
 
 CODE
 );
@@ -302,8 +312,9 @@ echo substr($x, -2, 1); // outputs 6
 CODE
 );
 
+echo "<p>Sandbox</p>";
 showcode(<<<'CODE'
-
+// Try it yourself...
 
 CODE
 );
@@ -311,6 +322,51 @@ CODE
 
 echo "<h3 id='formatting'>Formatting Strings</h3>";
 showcode(<<<'CODE'
-	
+// number_format() accepts 1, 2 or 4 arguments
+
+echo number_format("100000.698") . "\n"; // Shows 100,001
+echo number_format("100000.698", 3, ",", " "); // Shows 100000,698
+		
 CODE
 );
+
+showcode(<<<'CODE'
+// printf() examples
+
+$n = 123;
+$f = 123.45;
+$s = "A string";
+		
+printf("%d", $n); echo "\n"; // prints 123
+printf("%d", $f); echo "\n"; // prints 123
+		
+// Prints "The string is A string"
+printf("The string is %s", $s);  echo "\n";
+		
+// Example with precision
+printf("%3.3f", $f); // prints 123.450
+
+CODE
+);
+
+showcode(<<<'CODE'
+$name = "Dave Minion";
+
+// Simple match
+$regex = "/[a-zA-Z\s]/";
+
+if (preg_match($regex, $name)) {
+	// Valid Name
+	echo "$name = Valid" . "\n";
+}
+
+CODE
+);
+
+echo "<p>Sandbox</p>";
+showcode(<<<'CODE'
+// Try it yourself...
+
+CODE
+);
+

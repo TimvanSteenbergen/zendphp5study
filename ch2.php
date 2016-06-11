@@ -9,8 +9,13 @@
 include_once('generalIncludes.php');
 echo '<input id="chapter" type="hidden" value="2">';
 
-echo '<h2 id="syntax">Chapter 2 Functions - Paragraph Basic Syntax</h2>';
-echo '<h2 id="returningvalues">Chapter 2 Functions - Paragraph Returning values</h2>';
+echo '<h2>Chapter 2 Functions</h2>';
+
+echo '<h3 id="syntax">Basic Syntax</h3>';
+echo 'Nothing to fiddle with in this paragraph...';
+
+
+echo '<h3 id="returningvalues">Returning values</h3>';
 
 echo 'Listing 2.1: Returning a value';
 showcode(<<<'CODE'
@@ -21,6 +26,7 @@ function helloworld() {
 // Assigns the return value "Hello World" to $txt
 $txt = helloworld();
 echo helloworld(); // Displays "Hello World"
+		
 CODE
 );
 
@@ -38,6 +44,7 @@ hello("Reader"); // Displays "Hello Reader, how are you?"
 
 CODE
 );
+
 echo 'Listing 2.3: Returning by reference';
 showcode(<<<'CODE'
 function &query($sql) {
@@ -54,9 +61,19 @@ function &getHello() {
 function &test() {
     echo 'This is a test';
 }
+		
 CODE
 );
-echo '<h2 id="variablescope">Chapter 2 Functions - Paragraph Variable scope</h2>';
+
+echo "<p>Sandbox</p>";
+showcode(<<<'CODE'
+// Try it yourself...
+
+CODE
+);
+
+
+echo '<h3 id="variablescope">Variable scope</h3>';
 
 echo 'Listing 2.4: Variable scope';
 showcode(<<<'CODE'
@@ -68,8 +85,10 @@ function hi() {
 hi();
 echo $a; // Will output Hello World
 echo $b; // Will emit a notice
+		
 CODE
 );
+
 echo 'Listing 2.5: Accessing with the global statement';
 showcode(<<<'CODE'
 $a = "Hello";
@@ -79,8 +98,10 @@ function hiworld() {
     echo "$a $b";
 }
 hiworld(); // Displays "Hello World"
+		
 CODE
 );
+
 echo 'Listing 2.6: Accessing $GLOBALS array';
 showcode(<<<'CODE'
 $a = "Hello";
@@ -89,14 +110,17 @@ function greetings() {
     echo $GLOBALS['a'] .' '. $GLOBALS['b'];
 }
 greetings(); // Displays "Hello World"
+		
 CODE
 );
+
 echo 'Listing 2.7: Passing arguments';
 showcode(<<<'CODE'
 function hithere($who) {
     echo "Hello $who";
 }
 hithere("World");
+		
 CODE
 );
 
@@ -111,8 +135,14 @@ heee();
 heee("Reader");
 /* This time we override the default argument */
 echo '';
+		
 CODE
 );
+
+echo "<p>Sandbox</p>";
 showcode(<<<'CODE'
+// Try it yourself...
+
 CODE
 );
+
