@@ -53,7 +53,7 @@ function showcode($code, $lines = null, $echoeachline = false){
     }
     $numofcolumnssource = 65;
     $numofcolumnsresult = 65;
-    $id = microtime(true)*rand();
+    $id = (int)microtime(true)*rand(0,100000);
     
     //$bgcolor = dechex(rand(190,256)*256*256 + rand(190,256)*256 + rand(190,256));
     $bgcolor = "496d89";

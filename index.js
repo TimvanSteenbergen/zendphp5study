@@ -9,13 +9,20 @@ $(document).ready (function() {
         alert('Chapter niet aangegeven. Voorzie deze pagina van een hidden input met id chapter.');
     }
     $('#'+chapter).show();
+
+    // var myCodeMirror = CodeMirror(document.body);
+    var myCodeMirror1 = CodeMirror.fromTextArea('Ch1p1ex21');
+    var myCodeMirror2 = CodeMirror(document.body, {
+        value: "function myScript2(){return 100;}\n",
+        mode:  "javascript"
+    });
 });
 
 function EvaluateAgain(i){
 
     var code = $('textarea#source'+i)[0].value;
 
-    uf_urltemp = "http://localhost:8000/functions.php"; //1&XDEBUG_SESSION_START=PHPSTORM";
+    uf_urltemp = "functions.php"; //1&XDEBUG_SESSION_START=PHPSTORM";
     $.ajax({
         type: "GET",
         url: uf_urltemp,
