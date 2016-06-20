@@ -7,12 +7,15 @@
  * Time: 12:32
  */
 include_once('generalIncludes.php');
+echo '';
+
 echo '<input id="chapter" type="hidden" value="1">';
 
 echo '<h2>Chapter 1 PHP basics</h2>';
 
 echo '<h3 id="syntax">Syntax</h3>';
 echo 'Nothing to fiddle with in this paragraph...';
+echo '<textarea id="Ch1p1ex1"></textarea>einde textarea</br>';
 
 
 echo '<h3 id="anatomy">Anatomy of a PHP script</h3>';
