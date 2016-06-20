@@ -54,7 +54,9 @@ function showcode($code, $lines = null, $echoeachline = false){
     $numofcolumnssource = 65;
     $numofcolumnsresult = 65;
     $id = microtime(true)*rand();
-    $bgcolor = dechex(rand(190,256)*256*256 + rand(190,256)*256 + rand(190,256));
+    
+    //$bgcolor = dechex(rand(190,256)*256*256 + rand(190,256)*256 + rand(190,256));
+    $bgcolor = "496d89";
 
     echo '<div style="background-color: #' . $bgcolor . '; padding:5px;">';
 //    echo '<label for="source'.$id.'" rows="'.$numoflines .'">Sourcecode:</label>';
