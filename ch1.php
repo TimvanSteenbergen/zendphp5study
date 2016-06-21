@@ -16,19 +16,16 @@ echo '<h2>Chapter 1 PHP basics</h2>';
 echo '<h3 id="syntax">Syntax</h3>';
 echo 'Nothing to fiddle with in this paragraph...';
 echo '<textarea id="Ch1p1ex1">
-<?php
-$a = array(\'a\' => 1, \'b\' => 2, 3 => \'c\');
-
-echo "$a[a] ${a[3] /* } comment */} {$a[b]} \$a[a]";
-
-function hello($who) {
-	return "Hello $who!";
-}
-?>
-<p>The program says <?= hello("World") ?>.</p>
-<script>
-	alert("And here is some JS code"); // also colored
-</script>
+showcode(<<<\'CODE\'
+$a = 10 + 010;                             echo $a . "\n";
+$a = 0.10 + 0x10;                          echo $a . "\n";
+$a = 10 + 0b10;                            echo $a . "\n";
+$a = 2E3 + 0b10;                           echo $a . "\n";
+$a = 1.2E2 + 0b10;                         echo $a . "\n";
+$a = 10 + 0b10;                            echo $a . "\n";
+		
+CODE
+);
 </textarea>einde textarea</br>';
 
 

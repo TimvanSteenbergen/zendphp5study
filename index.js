@@ -12,8 +12,7 @@ $(document).ready (function() {
 
     mytextarea = document.getElementById('Ch1p1ex1');
     var myCodeMirror1 = CodeMirror.fromTextArea(mytextarea,{
-        lineNumbers: true,
-        ru
+        lineNumbers: true
     });
     //var myCodeMirror2 = CodeMirror(document.body, {
     //    value: "function myScript2(){return 100;}\n",
