@@ -10,12 +10,15 @@ $(document).ready (function() {
     }
     $('#'+chapter).show();
 
-    // var myCodeMirror = CodeMirror(document.body);
-    var myCodeMirror1 = CodeMirror.fromTextArea('Ch1p1ex21');
-    var myCodeMirror2 = CodeMirror(document.body, {
-        value: "function myScript2(){return 100;}\n",
-        mode:  "javascript"
+    mytextarea = document.getElementById('Ch1p1ex1');
+    var myCodeMirror1 = CodeMirror.fromTextArea(mytextarea,{
+        lineNumbers: true,
+        ru
     });
+    //var myCodeMirror2 = CodeMirror(document.body, {
+    //    value: "function myScript2(){return 100;}\n",
+    //    mode:  "javascript"
+    //});
 });
 
 function EvaluateAgain(i){
