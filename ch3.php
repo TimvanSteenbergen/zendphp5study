@@ -352,12 +352,13 @@ CODE
 showcode(<<<'CODE'
 $name = "Dave Minion";
 
-// Simple match
-$regex = "/[a-zA-Z\s]/";
+// Valid if name has one or two parts and only characters
+$regex = "/^[a-zA-Z]*\s[a-zA-Z]*/";
 
 if (preg_match($regex, $name)) {
-	// Valid Name
 	echo "$name = Valid" . "\n";
+} else {
+    echo "$name is not valid, not matching the regex $regex";
 }
 
 CODE
